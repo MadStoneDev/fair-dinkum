@@ -1,10 +1,14 @@
-﻿const MainFooter = () => {
+﻿import Link from "next/link";
+
+const MainFooter = ({ colour = "" }: { colour: string }) => {
   return (
     <footer
-      className={`pb-3 grid items-end h-12 text-[0.7rem] font-light text-neutral-400 text-center`}
+      className={`absolute bottom-3 w-full text-[0.7rem] font-light ${
+        colour ? colour : "text-neutral-400"
+      } text-center`}
     >
-      copyright &copy; {new Date().getFullYear()}. fairdinkum. All rights
-      reserved.
+      copyright &copy; {new Date().getFullYear()}.{" "}
+      <Link href={"/"}>FairDinkum</Link>. All rights reserved.
     </footer>
   );
 };
