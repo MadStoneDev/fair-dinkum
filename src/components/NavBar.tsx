@@ -1,50 +1,65 @@
-﻿import Link from "next/link";
+﻿"use client";
 
-const NavBar = () => {
+import { LuBadgeHelp, LuLayout, LuUserCircle, LuUsers2 } from "react-icons/lu";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+export default function NavBar() {
+  const pathName = usePathname();
+
+  console.log(pathName);
+
   return (
     <nav
-      className={`relative mx-auto p-4 flex justify-end items-center w-full`}
+      className={`mx-auto my-5 px-4 py-4 w-full md:max-w-7xl bg-white rounded-xl overflow-hidden`}
     >
-      <section
-        className={`absolute left-0 top-0 grid place-content-center w-full h-full`}
-      >
-        <h3 className={`font-light text-lg text-center`}>
-          <Link
-            href={"/"}
-            className={`p-2 hover:bg-white hover:text-black shadow-neutral-500 hover:shadow-xl transition-all duration-300`}
+      <div className={`flex w-fit`}>
+        {NAV_LINKS.map(({ name, path, icon }, index) => (
+          <article
+            key={`nav-link-${index}`}
+            className={`group relative inline-block w-32 h-10 border-r border-neutral-200 overflow-hidden`}
           >
-            fair<span className={`text-amber-500 font-medium`}>dinkum</span>
-          </Link>
-        </h3>
-      </section>
-      <section
-        className={`flex items-center text-sm text-center font-light text-neutral-500`}
-      >
-        <Link
-          href={"/auth/login"}
-          className={`group relative p-2 hover:bg-white hover:text-black shadow-neutral-500 hover:shadow-xl transition-all duration-300`}
-        >
-          Log
-          <span
-            className={`group-hover:text-amber-500 group-hover:font-medium transition-all duration-300`}
-          >
-            in
-          </span>
-        </Link>
-        <Link
-          href={"/auth/login"}
-          className={`group relative p-2 hover:bg-white hover:text-black shadow-neutral-500 hover:shadow-xl transition-all duration-300`}
-        >
-          Sign
-          <span
-            className={`group-hover:text-amber-500 group-hover:font-medium transition-all duration-300`}
-          >
-            up
-          </span>
-        </Link>
-      </section>
+            <Link
+              href={path}
+              className={`absolute top-0 group-hover:-top-10 grid place-content-center w-full transition-all duration-300 ease-in-out`}
+            >
+              <div
+                className={`grid place-content-center h-10 text-neutral-400 opacity-100 group-hover:opacity-0 transition-all duration-150 ease-in-out`}
+              >
+                {icon}
+              </div>
+              <p
+                className={`pt-1 grid place-content-center h-10 text-sm text-neutral-500 group-hover:text-neutral-800 opacity-0 group-hover:opacity-100 transition-all duration-150 ease-in-out`}
+              >
+                {name}
+              </p>
+            </Link>
+          </article>
+        ))}
+      </div>
     </nav>
   );
-};
+}
 
-export default NavBar;
+const NAV_LINKS = [
+  {
+    name: "Main Feed",
+    path: "/",
+    icon: <LuLayout size={26} />,
+  },
+  {
+    name: "Communities",
+    path: "/",
+    icon: <LuUsers2 size={26} />,
+  },
+  {
+    name: "Asks",
+    path: "/",
+    icon: <LuBadgeHelp size={26} />,
+  },
+  {
+    name: "Account",
+    path: "/",
+    icon: <LuUserCircle size={26} />,
+  },
+];

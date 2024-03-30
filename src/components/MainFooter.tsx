@@ -1,6 +1,6 @@
 ﻿import Link from "next/link";
 
-const MainFooter = ({ colour = "" }: { colour: string }) => {
+const MainFooter = ({ colour = "" }: { colour?: string }) => {
   return (
     <footer
       className={`absolute bottom-3 w-full text-[0.7rem] font-light ${
