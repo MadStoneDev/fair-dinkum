@@ -35,7 +35,7 @@ export default function FeedList() {
               </p>
             </div>
           </section>
-          <section className={`font-light text-sm`}>
+          <section className={`font-light text-sm tracking-wide`}>
             <p className={``}>{answer}</p>
           </section>
         </article>

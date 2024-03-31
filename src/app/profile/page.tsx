@@ -29,8 +29,8 @@ export default function Home() {
               </p>
             </div>
           </section>
-          <section className={`p-4 pt-6 grid gap-4 font-light text-sm`}>
-            <p className={``}>{answer}</p>
+          <section className={`p-4 pt-6 grid gap-4 font-light`}>
+            <p className={`text-xs`}>{answer}</p>
           </section>
         </article>
       ))}

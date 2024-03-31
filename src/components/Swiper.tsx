@@ -131,7 +131,7 @@ export default function Swiper({
       if (matchBreakpoint) {
         const newSlidesCount = breakpoints[matchBreakpoint].slidesPerView;
 
-        setSlideCount(newSlidesCount);
+        setSlideCount(Math.min(Children.count(children), newSlidesCount));
       }
     };
 

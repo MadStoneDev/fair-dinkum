@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import {
+  LuBadgeCheck,
   LuBadgeHelp,
   LuGlobe2,
   LuLayout,
@@ -106,34 +107,34 @@ const NAV_LINKS = [
     path: "/",
     icon: <LuLayout size={22} />,
   },
-  {
-    name: "Global Feed",
-    path: "/global",
-    icon: <LuGlobe2 size={22} />,
-  },
-  {
-    name: "Communities",
-    path: "/communities",
-    icon: <LuUsers2 size={22} />,
-  },
+  // {
+  //   name: "Global Feed",
+  //   path: "/global",
+  //   icon: <LuGlobe2 size={22} />,
+  // },
+  // {
+  //   name: "Communities",
+  //   path: "/communities",
+  //   icon: <LuUsers2 size={22} />,
+  // },
   {
     name: "Asks",
     path: "/asks",
     icon: <LuBadgeHelp size={22} />,
   },
   {
-    name: "My Answers",
-    path: "/my-answers",
-    icon: <LuMessageSquare size={22} />,
+    name: "Answers",
+    path: "/answers",
+    icon: <LuBadgeCheck size={22} />,
+  },
+  {
+    name: "My Profile",
+    path: "/me",
+    icon: <LuUserCircle size={22} />,
   },
   {
     name: "Settings",
-    path: "/my-settings",
+    path: "/me/settings",
     icon: <LuSettings size={22} />,
-  },
-  {
-    name: "Account",
-    path: "/my-account",
-    icon: <LuUserCircle size={22} />,
   },
 ];
