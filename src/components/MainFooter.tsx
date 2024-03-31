@@ -3,7 +3,7 @@
 const MainFooter = ({ colour = "" }: { colour?: string }) => {
   return (
     <footer
-      className={`absolute bottom-3 w-full text-[0.7rem] font-light ${
+      className={`self-end py-3 w-full text-[0.7rem] font-light ${
         colour ? colour : "text-neutral-400"
       } text-center`}
     >

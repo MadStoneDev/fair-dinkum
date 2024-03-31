@@ -12,7 +12,7 @@ export default function Home() {
           className={`grid border-2 border-amber-500 rounded-xl text-neutral-800 font-light overflow-hidden`}
         >
           <section
-            className={`p-4 flex oh items-center gap-2 border-b border-neutral-200 bg-amber-500 text-sm text-neutral-50`}
+            className={`p-4 flex items-center gap-2 border-b border-neutral-200 bg-amber-500 text-sm text-neutral-50`}
           >
             {QUESTION_ICON}
             <h6 className={`pt-1`}>{question}</h6>
