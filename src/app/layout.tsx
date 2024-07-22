@@ -1,26 +1,23 @@
-import type { Metadata } from "next";
-
-import React from "react";
-
 import "./globals.css";
-import MainFooter from "@/components/MainFooter";
+
+import type { Metadata } from "next";
+import ThemeProvider from "@/components/theme-provider";
 
 export const metadata: Metadata = {
-  title: "Fair Dinkum | ",
-  description: "",
+  title: "fairDinkum | Real Questions. Real Answers.",
+  description: "It's real. It's genuine. It's fairDinkum.",
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="stylesheet" href="https://use.typekit.net/gns5ybz.css" />
-      </head>
-      {children}
+      <body>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }
