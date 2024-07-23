@@ -4,15 +4,15 @@ import HomeFeature from "@/components/home-feature";
 
 export default function Home() {
   return (
-    <main className="flex h-screen flex-col items-center justify-start bg-neutral-100 dark:bg-dark transition-all duration-300 ease-in-out">
+    <main className="flex h-screen flex-col items-center justify-start gap-6 bg-neutral-100 dark:bg-dark transition-all duration-300 ease-in-out">
       {/* Nav Bar */}
       <NavBar />
 
       {/* Main Content */}
       <HomeFeature>
         <HomeCard />
-        <HomeCard />
-        <HomeCard />
+        <HomeCard></HomeCard>
+        <HomeCard></HomeCard>
         <HomeCard />
         <HomeCard />
         <HomeCard />
