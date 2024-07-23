@@ -2,12 +2,14 @@
 
 import { useEffect, useState, useRef } from "react";
 import { Slider } from "@/components/ui/slider";
+import HomeCard from "@/components/home-card";
 
 export default function HomeFeature({ children }: any) {
   // States
   const [scrollWidth, setScrollWidth] = useState<number>(0);
   const [scrollLeft, setScrollLeft] = useState<number>(0);
   const [clientWidth, setClientWidth] = useState<number>(0);
+  const [highlighted, setHighlighted] = useState<number>(1);
   const [positions, setPositions] = useState<
     { element: HTMLElement; top: number }[]
   >([]);
@@ -49,21 +51,33 @@ export default function HomeFeature({ children }: any) {
       const containerRect = containerRef.current.getBoundingClientRect();
       const elements = rowRef.current.children;
 
-      const newPositions = Array.from(elements).map((element: any) => {
+      Array.from(elements).forEach((element: any, index: number) => {
         const rect = element.getBoundingClientRect();
         const xPosition = rect.left - containerRect.left;
 
-        const translateTop = calculateTop(
-          xPosition,
-          targetX,
-          leftRange,
-          rightRange,
-          maxOffset,
-        );
-        return { element, top: translateTop };
+        if (
+          xPosition >= targetX - leftRange &&
+          xPosition <= targetX + rightRange
+        ) {
+          setHighlighted(index);
+        }
       });
 
-      setPositions(newPositions);
+      // const newPositions = Array.from(elements).map((element: any) => {
+      //   const rect = element.getBoundingClientRect();
+      //   const xPosition = rect.left - containerRect.left;
+      //
+      //   const translateTop = calculateTop(
+      //     xPosition,
+      //     targetX,
+      //     leftRange,
+      //     rightRange,
+      //     maxOffset,
+      //   );
+      //   return { element, top: translateTop };
+      // });
+      //
+      // setPositions(newPositions);
 
       setScrollLeft(containerRef.current?.scrollLeft);
       setScrollWidth(rowRef.current?.scrollWidth);
@@ -122,7 +136,12 @@ export default function HomeFeature({ children }: any) {
           className={`flex gap-4 h-full`}
           style={{ paddingRight: "2rem" }}
         >
-          {children}
+          {DUMMY_DATA.map((data, index) => (
+            <HomeCard
+              key={`home-card-${index}`}
+              highlighted={index === highlighted}
+            />
+          ))}
           <div className={`min-w-8 h-full`}></div>
         </section>
       </section>
@@ -141,3 +160,12 @@ export default function HomeFeature({ children }: any) {
     </div>
   );
 }
+
+const DUMMY_DATA: {
+  children?: any;
+  highlighted?: boolean;
+  hiddenTitle?: string;
+  hiddenDescription?: string;
+  className?: string;
+  styles?: any;
+}[] = [{}, {}, {}, {}, {}, {}, {}];

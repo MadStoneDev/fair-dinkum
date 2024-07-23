@@ -1,15 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function HomeCard({
   children,
+  highlighted = false,
   hiddenTitle = "Cool Username",
   hiddenDescription = "user's tagline",
   className,
   styles,
 }: {
   children?: any;
+  highlighted?: boolean;
   hiddenTitle?: string;
   hiddenDescription?: string;
   className?: string;
@@ -17,6 +19,23 @@ export default function HomeCard({
 }) {
   // States
   const [isActive, setIsActive] = useState<boolean>(false);
+
+  // Hooks
+  useEffect(() => {
+    if (isActive && !highlighted) {
+      setTimeout(() => {
+        setIsActive(false);
+      }, 2000);
+    }
+  }, [isActive]);
+
+  useEffect(() => {
+    if (highlighted) {
+      setIsActive(true);
+    } else {
+      setIsActive(false);
+    }
+  }, [highlighted]);
 
   return (
     <article
