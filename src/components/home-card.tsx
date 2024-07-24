@@ -1,9 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export default function HomeCard({
   children,
+  width = 350,
+  height = null,
+  aspectRatio = 3 / 4,
   highlighted = false,
   hiddenTitle = "Cool Username",
   hiddenDescription = "user's tagline",
@@ -11,6 +14,9 @@ export default function HomeCard({
   styles,
 }: {
   children?: any;
+  width?: number;
+  height?: number | null;
+  aspectRatio?: number;
   highlighted?: boolean;
   hiddenTitle?: string;
   hiddenDescription?: string;
@@ -20,12 +26,17 @@ export default function HomeCard({
   // States
   const [isActive, setIsActive] = useState<boolean>(false);
 
+  // Refs
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+
   // Hooks
   useEffect(() => {
     if (isActive && !highlighted) {
-      setTimeout(() => {
+      timerRef.current = setTimeout(() => {
         setIsActive(false);
       }, 2000);
+    } else {
+      if (timerRef.current) clearTimeout(timerRef.current);
     }
   }, [isActive]);
 
@@ -39,12 +50,15 @@ export default function HomeCard({
 
   return (
     <article
-      className={`relative min-w-[350px] bg-light rounded-[2rem] transition-all duration-300 ease-in-out ${className}`}
+      className={`relative bg-light rounded-[2rem] transition-all duration-300 ease-in-out ${className}`}
       style={{
+        width: `${width}px`,
+        minWidth: `${width}px`,
+        height: `${height}px`,
+        aspectRatio: aspectRatio,
         transform: `translateY(${isActive ? "-100px" : "0"})`,
         scrollSnapAlign: "start",
         scrollSnapStop: "always",
-        aspectRatio: "3/4",
         ...styles,
       }}
       onClick={() => setIsActive(!isActive)}
