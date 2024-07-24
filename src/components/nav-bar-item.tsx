@@ -23,7 +23,7 @@ export default function NavBarItem({
           pathname === href
             ? "bg-accent/40 dark:bg-light/80 text-accent font-medium"
             : "text-dark dark:text-light hover:bg-accent/10 dark:hover:bg-light/20"
-        } rounded-full text-xs transition-all duration-300 ease-in-out`}
+        } rounded-full text-xs transition-all duration-500 ease-in-out`}
         href={href}
       >
         {title}

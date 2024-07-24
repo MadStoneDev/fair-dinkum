@@ -50,7 +50,7 @@ export default function HomeCard({
 
   return (
     <article
-      className={`relative bg-light rounded-[2rem] transition-all duration-300 ease-in-out ${className}`}
+      className={`relative bg-light rounded-[2rem] transition-all duration-500 ease-in-out ${className}`}
       style={{
         width: `${width}px`,
         minWidth: `${width}px`,

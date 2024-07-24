@@ -47,7 +47,7 @@ export default function NotFound() {
         >
           <Link
             className={`px-3 py-2 self-end bg-dark rounded-full text-light text-sm`}
-            href={"/hows-it-work" as Route}
+            href={"/premium" as Route}
           >
             Explore
           </Link>
@@ -61,7 +61,7 @@ export default function NotFound() {
         >
           <Link
             className={`px-3 py-2 self-end bg-dark rounded-full text-light text-sm`}
-            href={"/hows-it-work" as Route}
+            href={"/" as Route}
           >
             Go Now
           </Link>

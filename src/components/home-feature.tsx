@@ -63,38 +63,11 @@ export default function HomeFeature({ children }: any) {
         }
       });
 
-      // const newPositions = Array.from(elements).map((element: any) => {
-      //   const rect = element.getBoundingClientRect();
-      //   const xPosition = rect.left - containerRect.left;
-      //
-      //   const translateTop = calculateTop(
-      //     xPosition,
-      //     targetX,
-      //     leftRange,
-      //     rightRange,
-      //     maxOffset,
-      //   );
-      //   return { element, top: translateTop };
-      // });
-      //
-      // setPositions(newPositions);
-
       setScrollLeft(containerRef.current?.scrollLeft);
       setScrollWidth(rowRef.current?.scrollWidth);
       setClientWidth(containerRef.current?.clientWidth);
     }
   };
-
-  const handleSliderChange = (value: number[]) => {
-    if (containerRef.current) {
-      const newScrollLeft = (value[0] / 100) * (scrollWidth - clientWidth);
-      containerRef.current.scrollLeft = newScrollLeft;
-    }
-  };
-
-  const sliderValue = Math.round(
-    (scrollLeft / (scrollWidth - clientWidth)) * 100,
-  );
 
   // Hooks
   useEffect(() => {
