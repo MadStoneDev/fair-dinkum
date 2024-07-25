@@ -7,7 +7,7 @@ import { useEffect } from "react";
 
 export default function NotFound() {
   return (
-    <main className="p-8 transition-all duration-500 ease-in-out">
+    <main className="p-8 mb-10 transition-all duration-500 ease-in-out">
       {/* Main Content */}
       <h1 className={`font-bold text-4xl`}>Woah!</h1>
       <h3 className={`mb-4 text-xl font-bold`}>

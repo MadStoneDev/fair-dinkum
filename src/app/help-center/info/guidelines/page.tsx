@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Guidelines() {
   return (
-    <main className="ml-16 max-w-xl text-sm font-light leading-6 transition-all duration-500 ease-in-out">
+    <main className="ml-0 md:ml-16 max-w-xl text-sm font-light leading-6 transition-all duration-500 ease-in-out">
       <h1 className={`mb-8 text-2xl font-bold`}>
         fairDinkum Community Guidelines
       </h1>

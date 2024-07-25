@@ -63,7 +63,7 @@ export default function NavBar() {
           <DarkModeToggle />
           <Link
             href={`/help-center/`}
-            className={`ml-1 flex items-center gap-2 font-light text-xl text-dark md:text-dark md:dark:text-light hover:text-accent transition-all duration-500 ease-in-out`}
+            className={`ml-1 flex items-center gap-2 font-light text-xl text-dark md:text-dark md:dark:text-light md:hover:text-accent transition-all duration-500 ease-in-out`}
             onClick={closeMenu}
           >
             <span className={`block md:hidden`}>Info </span>

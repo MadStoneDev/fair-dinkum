@@ -8,7 +8,9 @@ export default function InfoSidebar() {
   const pathname = usePathname();
 
   return (
-    <section className={`flex flex-col gap-2 font-light`}>
+    <section
+      className={`flex flex-col gap-2 font-light min-w-24 sm:min-w-32 md:min-w-auto w-24 sm:w-32 md:w-auto`}
+    >
       <Link
         key={"Help Center Home"}
         href={"/help-center"}
