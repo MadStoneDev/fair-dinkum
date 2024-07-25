@@ -18,7 +18,7 @@
                 Hi logged in user,
               </h4>
               <h3 className={`text-lg font-medium tracking-tighter`}>
-                why not ask username a question:
+                why not ask {user} a question:
               </h3>
             </div>
           </div>
@@ -38,12 +38,10 @@
 
         {/* Question */}
         <article
-          className={`relative p-4 flex flex-col bg-light/80 dark:bg-light/15 rounded-2xl`}
+          className={`relative flex flex-col bg-light/80 dark:bg-light/15 rounded-2xl`}
         >
           {/* Header */}
-          <div
-            className={`pb-4 flex flex-row gap-4 h-full border-b border-dark/10 dark:border-light/10`}
-          >
+          <div className={`p-4 flex flex-row gap-4 h-full`}>
             <div className={`w-12 aspect-square rounded-full bg-accent`}></div>
             <div className={`flex-grow flex flex-col justify-center h-full`}>
               <h4
@@ -52,26 +50,26 @@
                 Few moments ago
               </h4>
               <h3 className={`text-lg font-medium tracking-tighter`}>
-                username asked
+                logged in user asked
               </h3>
             </div>
           </div>
 
           {/* Body */}
-          <div className={``}>
-            <p
-              className={`pt-4 text-sm font-light text-dark dark:text-light/70`}
-            >
+          <div className={`pt-0 p-4 `}>
+            <p className={`text-sm font-light text-dark dark:text-light/70`}>
               Some question that is really important and worthy of a long,
               meaningful and special answer?
             </p>
           </div>
         </article>
       </section>
+
+      {/* User Info */}
       <section className={`col-span-2 flex flex-col items-center gap-1`}>
         <div className={`mb-3 w-32 aspect-square rounded-full bg-accent`}></div>
         <h1 className={`text-xl tracking-tight text-dark dark:text-light`}>
-          Username
+          {user}
         </h1>
         <p
           className={`mb-3 max-w-40 font-light tracking-tight text-sm text-center text-dark/50 dark:text-light/50`}
@@ -95,7 +93,49 @@
           tell us about themselves.
         </p>
       </section>
-      <section className={`col-span-3`}></section>
+
+      {/* Right Column */}
+      <section className={`col-span-3 flex flex-col gap-4`}>
+        {/* Question */}
+        <article
+          className={`relative flex flex-col bg-light/80 dark:bg-light/15 rounded-2xl overflow-hidden`}
+        >
+          {/* Header */}
+          <div className={`p-4 flex flex-row gap-4 h-full`}>
+            <div className={`w-12 aspect-square rounded-full bg-accent`}></div>
+            <div className={`flex-grow flex flex-col justify-center h-full`}>
+              <h4
+                className={`mt-1 -mb-1.5 text-xs font-light text-dark/60 dark:text-light/50`}
+              >
+                Few moments ago
+              </h4>
+              <h3 className={`text-lg font-medium tracking-tighter`}>
+                archer asked
+              </h3>
+            </div>
+          </div>
+
+          {/* Question */}
+          <div className={`pt-0 p-4 `}>
+            <p className={`text-sm font-light text-dark dark:text-light/70`}>
+              Do you want ants? Because that's how you get ants!
+            </p>
+          </div>
+
+          {/* Answer */}
+          <div className={`p-4 bg-accent`}>
+            <div className={`mb-4 flex flex-col justify-center`}>
+              <h4 className={`mt-1 -mb-1.5 text-xs font-light text-light/50`}>
+                Few moments ago
+              </h4>
+              <h3 className={`text-lg font-medium tracking-tighter text-light`}>
+                {user} answered:
+              </h3>
+            </div>
+            <p className={`text-sm text-light`}>Yayyyy!</p>
+          </div>
+        </article>
+      </section>
     </main>
   );
 }
