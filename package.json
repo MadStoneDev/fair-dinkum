@@ -15,15 +15,18 @@
     "@tabler/icons-react": "^3.11.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "ioredis": "^5.4.1",
     "lucide-react": "^0.414.0",
     "next": "14.2.5",
     "next-themes": "^0.3.0",
     "react": "^18",
     "react-dom": "^18",
+    "styled-components": "^6.1.12",
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@types/ioredis": "^5.0.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

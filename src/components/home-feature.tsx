@@ -97,25 +97,22 @@ export default function HomeFeature({ children }: any) {
       </section>
       <section
         ref={containerRef}
-        className={`feature-scroll pl-8 pt-28 w-full overflow-x-auto transition-all duration-500 ease-in-out overflow-y-hidden`}
+        className={`feature-scroll pt-28 w-full overflow-x-auto transition-all duration-500 ease-in-out overflow-y-hidden`}
         style={{
           whiteSpace: "nowrap",
           scrollSnapType: "x mandatory",
           scrollPaddingInlineStart: "2rem",
         }}
       >
-        <section
-          ref={rowRef}
-          className={`flex gap-4 h-full`}
-          style={{ paddingRight: "2rem" }}
-        >
+        <section ref={rowRef} className={`px-8 flex gap-4 h-full`}>
           {DUMMY_DATA.map((data, index) => (
             <HomeCard
               key={`home-card-${index}`}
               highlighted={index === highlighted}
+              responsive={true}
             />
           ))}
-          <div className={`min-w-8 h-full`}></div>
+          <div className={`w-4 min-w-4 aspect-square`} />
         </section>
       </section>
       {/*<section className={`my-4 flex justify-center w-full`}>*/}

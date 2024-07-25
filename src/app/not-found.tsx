@@ -23,7 +23,9 @@ export default function NotFound() {
         Now that you're here, let's now go somewhere else, aye?
       </p>
 
-      <section className={`pt-28 flex gap-4 min-h-[200px] overflow-hidden`}>
+      <section
+        className={`sm:pt-28 flex flex-col sm:flex-row flex-wrap gap-4 min-h-[200px] overflow-hidden`}
+      >
         <HomeCard
           width={200}
           aspectRatio={1}
@@ -32,7 +34,7 @@ export default function NotFound() {
           className={`p-4 flex`}
         >
           <Link
-            className={`px-3 py-2 self-end bg-dark rounded-full text-light text-sm`}
+            className={`px-3 py-2 self-end bg-dark rounded-full text-light text-xs sm:text-sm`}
             href={"/hows-it-work" as Route}
           >
             Learn
@@ -46,7 +48,7 @@ export default function NotFound() {
           className={`p-4 flex`}
         >
           <Link
-            className={`px-3 py-2 self-end bg-dark rounded-full text-light text-sm`}
+            className={`px-3 py-2 self-end bg-dark rounded-full text-light text-xs sm:text-sm`}
             href={"/premium" as Route}
           >
             Explore
@@ -60,7 +62,7 @@ export default function NotFound() {
           className={`p-4 flex`}
         >
           <Link
-            className={`px-3 py-2 self-end bg-dark rounded-full text-light text-sm`}
+            className={`px-3 py-2 self-end bg-dark rounded-full text-light text-xs sm:text-sm`}
             href={"/" as Route}
           >
             Go Now
