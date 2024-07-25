@@ -19,7 +19,9 @@ export default function NavBar() {
 
       <button
         className={`block md:hidden ${
-          isOpen ? "text-light rotate-[540deg]" : "text-dark rotate-0"
+          isOpen
+            ? "text-light dark:text-dark rotate-[540deg]"
+            : "text-dark dark:text-light rotate-0"
         } z-50 transition-all duration-500 ease-in-out`}
         onClick={() => setIsOpen(!isOpen)}
       >
@@ -29,11 +31,11 @@ export default function NavBar() {
       <div
         className={`flex-grow absolute md:relative top-0 h-full ${
           isOpen ? "max-h-full p-8 md:p-0" : "max-h-0 px-8 py-0"
-        } left-0 right-0 flex flex-col md:flex-row md:justify-between gap-8 md:gap-0 bg-dark md:bg-transparent overflow-hidden z-40 transition-all duration-500 ease-in-out`}
+        } left-0 right-0 flex flex-col md:flex-row md:justify-between gap-8 md:gap-0 bg-accent md:bg-transparent overflow-hidden z-40 transition-all duration-500 ease-in-out`}
       >
         {/* Navigation */}
         <ul
-          className={`flex flex-col md:flex-row md:items-center gap-8 md:gap-2 font-light text-light md:text-dark md:dark:text-light text-xs`}
+          className={`flex flex-col md:flex-row md:items-center gap-8 md:gap-2 font-light text-light dark:text-dark md:text-dark md:dark:text-light text-xs`}
         >
           <div
             className={`hidden md:block ml-4 mr-2 bg-dark/20 dark:bg-light/20`}
@@ -53,7 +55,7 @@ export default function NavBar() {
           <DarkModeToggle />
           <Link
             href={`/help-center/`}
-            className={`ml-1 flex items-center gap-2 text-xl text-light md:text-dark dark:text-light hover:text-accent transition-all duration-500 ease-in-out`}
+            className={`ml-1 flex items-center gap-2 font-light text-xl text-dark md:text-dark md:dark:text-light hover:text-accent transition-all duration-500 ease-in-out`}
           >
             <span>Info </span>
             <IconHelpHexagon size={28} />
@@ -69,7 +71,7 @@ export default function NavBar() {
           <Link
             // href={`/login`}
             href={`/`}
-            className={`px-4 py-2 bg-accent rounded-full text-light text-xl md:text-xs w-max whitespace-nowrap`}
+            className={`md:px-4 md:py-2 md:bg-accent rounded-full font-light text-dark text-xl md:text-xs w-max whitespace-nowrap`}
           >
             Get Started
           </Link>

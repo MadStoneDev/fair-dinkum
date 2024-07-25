@@ -16,25 +16,25 @@ export default function DarkModeToggle() {
 
   return (
     <section
-      className={`relative w-20 md:w-7 h-8 overflow-hidden`}
+      className={`relative w-full md:w-7 h-8 overflow-hidden`}
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
       <article
         className={`absolute ${
           theme === "dark" ? "top-0 hover:-top-3" : "-top-8 hover:-top-5"
-        } flex flex-col items-center w-20 md:w-7 h-16 text-xl text-light md:text-dark dark:text-light transition-all" +
+        } flex flex-col items-center w-full md:w-7 h-16 text-xl font-light text-dark md:text-dark md:dark:text-light transition-all" +
           " duration-500 ease-in-out`}
       >
         <button
-          className={`flex md:justify-center items-center gap-2 w-20 md:w-7 h-8`}
+          className={`flex md:justify-center items-center gap-2 w-full md:w-7 h-8 whitespace-nowrap`}
         >
-          <span>Light </span>
+          <span>Switch to Light </span>
           <IconSunHigh />
         </button>
         <button
-          className={`flex md:justify-center items-center gap-2 w-20 md:w-7 h-8`}
+          className={`flex md:justify-center items-center gap-2 w-full md:w-7 h-8 whitespace-nowrap`}
         >
-          <span>Dark </span>
+          <span>Switch to Dark </span>
           <IconMoon />
         </button>
       </article>
