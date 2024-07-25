@@ -67,7 +67,8 @@ export default function NavBar() {
           ></div>
           {/* Auth */}
           <Link
-            href={`/login`}
+            // href={`/login`}
+            href={`/`}
             className={`px-4 py-2 bg-accent rounded-full text-light text-xl md:text-xs w-max whitespace-nowrap`}
           >
             Get Started
