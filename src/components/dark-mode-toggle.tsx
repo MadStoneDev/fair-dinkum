@@ -21,7 +21,7 @@ export default function DarkModeToggle() {
     >
       <article
         className={`absolute ${
-          theme === "dark" ? "top-0 hover:-top-3" : "-top-8 hover:-top-5"
+          theme === "dark" ? "top-0 md:hover:-top-3" : "-top-8 md:hover:-top-5"
         } flex flex-col items-center w-full md:w-7 h-16 text-xl font-light text-dark md:text-dark md:dark:text-light transition-all" +
           " duration-500 ease-in-out`}
       >

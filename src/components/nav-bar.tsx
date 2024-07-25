@@ -10,6 +10,10 @@ export default function NavBar() {
   // States
   const [isOpen, setIsOpen] = useState(false);
 
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   return (
     <nav className={`p-8 flex flex-row items-center justify-between w-full`}>
       {/* Logo */}
@@ -44,9 +48,13 @@ export default function NavBar() {
               height: "1.5rem",
             }}
           ></div>
-          <NavBarItem title={"Home"} href={"/"} />
-          <NavBarItem title={"How's it work?"} href={"/about"} />
-          <NavBarItem title={"Premium"} href={"/premium"} />
+          <NavBarItem title={"Home"} href={"/"} onClick={closeMenu} />
+          <NavBarItem
+            title={"How's it work?"}
+            href={"/about"}
+            onClick={closeMenu}
+          />
+          <NavBarItem title={"Premium"} href={"/premium"} onClick={closeMenu} />
         </ul>
 
         <section
@@ -56,6 +64,7 @@ export default function NavBar() {
           <Link
             href={`/help-center/`}
             className={`ml-1 flex items-center gap-2 font-light text-xl text-dark md:text-dark md:dark:text-light hover:text-accent transition-all duration-500 ease-in-out`}
+            onClick={closeMenu}
           >
             <span className={`block md:hidden`}>Info </span>
             <IconHelpHexagon size={28} />
@@ -72,6 +81,7 @@ export default function NavBar() {
             // href={`/login`}
             href={`/`}
             className={`md:px-4 md:py-2 md:bg-accent rounded-full font-light text-dark md:text-light text-xl md:text-xs w-max whitespace-nowrap`}
+            onClick={closeMenu}
           >
             Get Started
           </Link>

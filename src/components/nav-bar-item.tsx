@@ -6,9 +6,11 @@ import { usePathname } from "next/navigation";
 export default function NavBarItem({
   title,
   href,
+  onClick,
 }: Readonly<{
   title: React.ReactNode;
   href: string;
+  onClick?: () => void;
 }>) {
   // Hooks
   const pathname = usePathname();
@@ -25,6 +27,7 @@ export default function NavBarItem({
             : "text-dark md:text-dark md:dark:text-light hover:bg-accent/10 dark:hover:bg-light/20"
         } rounded-full text-xl md:text-xs transition-all duration-500 ease-in-out`}
         href={href}
+        onClick={onClick}
       >
         {title}
       </Link>
