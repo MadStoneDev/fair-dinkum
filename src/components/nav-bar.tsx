@@ -29,8 +29,8 @@ export default function NavBar() {
       </button>
 
       <div
-        className={`flex-grow absolute md:relative top-0 h-full ${
-          isOpen ? "max-h-full p-8 md:p-0" : "max-h-0 px-8 py-0"
+        className={`pl-8 pr-8 md:pr-0 flex-grow absolute md:relative top-0 h-full ${
+          isOpen ? "max-h-full py-8 md:py-0" : "max-h-0 py-0"
         } md:max-h-full left-0 right-0 flex flex-col md:flex-row md:justify-between gap-8 md:gap-0 bg-accent md:bg-transparent overflow-hidden z-40 transition-all duration-500 ease-in-out`}
       >
         {/* Navigation */}
