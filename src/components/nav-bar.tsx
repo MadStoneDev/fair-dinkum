@@ -31,7 +31,7 @@ export default function NavBar() {
       <div
         className={`flex-grow absolute md:relative top-0 h-full ${
           isOpen ? "max-h-full p-8 md:p-0" : "max-h-0 px-8 py-0"
-        } left-0 right-0 flex flex-col md:flex-row md:justify-between gap-8 md:gap-0 bg-accent md:bg-transparent overflow-hidden z-40 transition-all duration-500 ease-in-out`}
+        } md:max-h-full left-0 right-0 flex flex-col md:flex-row md:justify-between gap-8 md:gap-0 bg-accent md:bg-transparent overflow-hidden z-40 transition-all duration-500 ease-in-out`}
       >
         {/* Navigation */}
         <ul
@@ -57,7 +57,7 @@ export default function NavBar() {
             href={`/help-center/`}
             className={`ml-1 flex items-center gap-2 font-light text-xl text-dark md:text-dark md:dark:text-light hover:text-accent transition-all duration-500 ease-in-out`}
           >
-            <span>Info </span>
+            <span className={`block md:hidden`}>Info </span>
             <IconHelpHexagon size={28} />
           </Link>
           <div
@@ -71,7 +71,7 @@ export default function NavBar() {
           <Link
             // href={`/login`}
             href={`/`}
-            className={`md:px-4 md:py-2 md:bg-accent rounded-full font-light text-dark text-xl md:text-xs w-max whitespace-nowrap`}
+            className={`md:px-4 md:py-2 md:bg-accent rounded-full font-light text-dark md:text-light text-xl md:text-xs w-max whitespace-nowrap`}
           >
             Get Started
           </Link>

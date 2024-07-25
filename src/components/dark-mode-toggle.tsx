@@ -28,13 +28,13 @@ export default function DarkModeToggle() {
         <button
           className={`flex md:justify-center items-center gap-2 w-full md:w-7 h-8 whitespace-nowrap`}
         >
-          <span>Switch to Light </span>
+          <span className={`block md:hidden`}>Switch to Light </span>
           <IconSunHigh />
         </button>
         <button
           className={`flex md:justify-center items-center gap-2 w-full md:w-7 h-8 whitespace-nowrap`}
         >
-          <span>Switch to Dark </span>
+          <span className={`block md:hidden`}>Switch to Dark </span>
           <IconMoon />
         </button>
       </article>
