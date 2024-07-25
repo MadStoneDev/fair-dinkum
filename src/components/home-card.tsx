@@ -85,7 +85,7 @@ export default function HomeCard({
   useEffect(() => {
     if (
       (isActive && window.innerWidth > breakpoints.md && !highlighted) ||
-      window.innerWidth <= breakpoints.md
+      (isActive && window.innerWidth <= breakpoints.md)
     ) {
       timerRef.current = setTimeout(() => {
         setIsActive(false);

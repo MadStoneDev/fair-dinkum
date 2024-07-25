@@ -44,6 +44,10 @@
   font-style: normal;
 }
 
+body {
+  @apply text-dark dark:text-light;
+}
+
 .feature-scroll {
   -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
   scrollbar-width: none; /* Hide scrollbar for Firefox */
