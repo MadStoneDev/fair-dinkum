@@ -19,11 +19,11 @@ export default function NavBarItem({
   return (
     <li>
       <Link
-        className={`px-5 py-2 ${
+        className={`md:px-5 py-2 ${
           pathname === href
-            ? "bg-accent/40 dark:bg-light/80 text-accent font-medium"
-            : "text-dark dark:text-light hover:bg-accent/10 dark:hover:bg-light/20"
-        } rounded-full text-xs transition-all duration-500 ease-in-out`}
+            ? "md:bg-accent/40 md:dark:bg-light/80 text-accent font-medium"
+            : "text-light md:text-dark dark:text-light hover:bg-accent/10 dark:hover:bg-light/20"
+        } rounded-full text-xl md:text-xs transition-all duration-500 ease-in-out`}
         href={href}
       >
         {title}
