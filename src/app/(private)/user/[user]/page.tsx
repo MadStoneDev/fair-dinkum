@@ -1,140 +1,84 @@
-﻿export default function User({ params }: { params: { user: string } }) {
+﻿import AskQuestion from "@/components/ask-question";
+import UnansweredQuestions from "@/components/unanswered-questions";
+import AnsweredQuestions from "@/components/answered-questions";
+
+export default function User({ params }: { params: { user: string } }) {
   // Params
   const { user } = params;
 
   return (
-    <main className="p-8 grid grid-cols-8 gap-6 transition-all duration-500 ease-in-out">
-      <section className={`col-span-3 flex flex-col gap-4`}>
-        {/* New Question */}
-        <article
-          className={`relative flex flex-col border-2 border-dark dark:border-light rounded-2xl overflow-hidden`}
-        >
-          {/* Header */}
-          <div
-            className={`p-4 flex flex-row gap-4 h-full border-b border-dark/10 dark:border-light/10 bg-dark dark:bg-light text-light dark:text-dark`}
-          >
-            <div className={`flex-grow flex flex-col justify-center h-full`}>
-              <h4 className={`mt-1 -mb-1.5 text-sm font-light opacity-60`}>
-                Hi logged in user,
-              </h4>
-              <h3 className={`text-lg font-medium tracking-tighter`}>
-                why not ask {user} a question:
-              </h3>
-            </div>
-          </div>
-
-          {/* Body */}
-          <div className={`p-4 min-h-20`}>
-            <p
-              className={`text-sm font-light italic text-dark dark:text-light/70`}
-            >
-              Example: what's your favourite movie?
-            </p>
-          </div>
-        </article>
+    <main className="p-8 mb-10 grid grid-cols-8 gap-6 transition-all duration-500 ease-in-out">
+      <section className={`col-span-3 flex flex-col gap-6 overflow-y-auto`}>
+        {/* Ask a New Question */}
+        <AskQuestion user={user} />
 
         {/* Separator */}
-        <div className={`h-px w-full bg-dark/10 dark:bg-light/10`}></div>
+        {/*<div className={`h-px w-full bg-dark/10 dark:bg-light/10`}></div>*/}
 
-        {/* Question */}
-        <article
-          className={`relative flex flex-col bg-light/80 dark:bg-light/15 rounded-2xl`}
+        <h2
+          className={`mt-2 pr-10 pb-2 w-max border-b border-dark/15 dark:border-light/15 text-lg font-bold tracking-tight text-accent`}
         >
-          {/* Header */}
-          <div className={`p-4 flex flex-row gap-4 h-full`}>
-            <div className={`w-12 aspect-square rounded-full bg-accent`}></div>
-            <div className={`flex-grow flex flex-col justify-center h-full`}>
-              <h4
-                className={`mt-1 -mb-1.5 text-xs font-light text-dark/60 dark:text-light/50`}
-              >
-                Few moments ago
-              </h4>
-              <h3 className={`text-lg font-medium tracking-tighter`}>
-                logged in user asked
-              </h3>
-            </div>
-          </div>
-
-          {/* Body */}
-          <div className={`pt-0 p-4 `}>
-            <p className={`text-sm font-light text-dark dark:text-light/70`}>
-              Some question that is really important and worthy of a long,
-              meaningful and special answer?
-            </p>
-          </div>
-        </article>
+          You asked {user}
+        </h2>
+        <p className={`text-sm italic font-light opacity-50`}>
+          You haven't asked {user} any questions yet.
+        </p>
+        {/* Unanswered Question */}
+        <UnansweredQuestions />
+        <UnansweredQuestions />
+        <UnansweredQuestions />
+        <UnansweredQuestions />
+        <UnansweredQuestions />
+        <UnansweredQuestions />
       </section>
 
       {/* User Info */}
-      <section className={`col-span-2 flex flex-col items-center gap-1`}>
-        <div className={`mb-3 w-32 aspect-square rounded-full bg-accent`}></div>
-        <h1 className={`text-xl tracking-tight text-dark dark:text-light`}>
-          {user}
-        </h1>
-        <p
-          className={`mb-3 max-w-40 font-light tracking-tight text-sm text-center text-dark/50 dark:text-light/50`}
-        >
-          member at <span className={`font-bold`}>fair</span>Dinkum since
-          August, 2024
-        </p>
-        <div className={`pb-10 flex flex-row gap-4`}>
-          <h3 className={`py-2 font-bold`}>
-            15<span className={`pl-2 font-light opacity-70`}>Followers</span>
-          </h3>
-          <div className={`w-0.5 h-full bg-dark/50 dark:bg-light/50`}></div>
-          <h3 className={`py-2 font-bold`}>
-            23<span className={`pl-2 font-light opacity-70`}>Following</span>
-          </h3>
+      <section className={`col-span-2 relative flex justify-center`}>
+        <div className={`fixed flex flex-col items-center gap-1`}>
+          <div
+            className={`mb-3 w-32 aspect-square rounded-full bg-accent`}
+          ></div>
+          <h1 className={`text-xl tracking-tight text-dark dark:text-light`}>
+            {user}
+          </h1>
+          <p
+            className={`mb-3 max-w-40 font-light tracking-tight text-sm text-center text-dark/50 dark:text-light/50`}
+          >
+            member at <span className={`font-bold`}>fair</span>Dinkum since
+            August, 2024
+          </p>
+          <div className={`pb-10 flex flex-row gap-4`}>
+            <h3 className={`py-2 font-bold`}>
+              15<span className={`pl-2 font-light opacity-70`}>Followers</span>
+            </h3>
+            <div
+              className={`w-0.5 min-h-full bg-dark/50 dark:bg-light/50`}
+            ></div>
+            <h3 className={`py-2 font-bold`}>
+              23<span className={`pl-2 font-light opacity-70`}>Following</span>
+            </h3>
+          </div>
+          <p
+            className={`max-w-52 text-sm font-light text-dark/50 dark:text-light/50 tracking-tighter text-center`}
+          >
+            this is a quick bio about this user and all of the things they want
+            to tell us about themselves.
+          </p>
         </div>
-        <p
-          className={`max-w-52 text-sm font-light text-dark/50 dark:text-light/50 tracking-tighter text-center`}
-        >
-          this is a quick bio about this user and all of the things they want to
-          tell us about themselves.
-        </p>
       </section>
 
       {/* Right Column */}
-      <section className={`col-span-3 flex flex-col gap-4`}>
-        {/* Question */}
-        <article
-          className={`relative flex flex-col bg-light/80 dark:bg-light/15 rounded-2xl overflow-hidden`}
+      <section className={`col-span-3 flex flex-col gap-6`}>
+        <h2
+          className={`pr-10 pb-2 w-max border-b border-dark/15 dark:border-light/15 text-lg font-bold tracking-tight text-accent`}
         >
-          {/* Header */}
-          <div className={`p-4 flex flex-row gap-4 h-full`}>
-            <div className={`w-12 aspect-square rounded-full bg-accent`}></div>
-            <div className={`flex-grow flex flex-col justify-center h-full`}>
-              <h4
-                className={`mt-1 -mb-1.5 text-xs font-light text-dark/60 dark:text-light/50`}
-              >
-                Few moments ago
-              </h4>
-              <h3 className={`text-lg font-medium tracking-tighter`}>
-                archer asked
-              </h3>
-            </div>
-          </div>
-
-          {/* Question */}
-          <div className={`pt-0 p-4 `}>
-            <p className={`text-sm font-light text-dark dark:text-light/70`}>
-              Do you want ants? Because that's how you get ants!
-            </p>
-          </div>
-
-          {/* Answer */}
-          <div className={`p-4 bg-accent`}>
-            <div className={`mb-4 flex flex-col justify-center`}>
-              <h4 className={`mt-1 -mb-1.5 text-xs font-light text-light/50`}>
-                Few moments ago
-              </h4>
-              <h3 className={`text-lg font-medium tracking-tighter text-light`}>
-                {user} answered:
-              </h3>
-            </div>
-            <p className={`text-sm text-light`}>Yayyyy!</p>
-          </div>
-        </article>
+          Answered Questions
+        </h2>
+        {/* Answered Question */}
+        <AnsweredQuestions user={user} />
+        <AnsweredQuestions user={user} />
+        <AnsweredQuestions user={user} />
+        <AnsweredQuestions user={user} />
       </section>
     </main>
   );
