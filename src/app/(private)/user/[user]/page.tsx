@@ -73,6 +73,10 @@ export default function User({ params }: { params: { user: string } }) {
         </div>
       </section>
 
+      <div className={`md:p-8 lg:hidden col-span-4`}>
+        <AskQuestion user={user} />
+      </div>
+
       {/* Right Column */}
       <section
         className={`p-0 md:pl-8 lg:pl-0 md:pr-8 col-span-4 xl:col-span-3 flex flex-col gap-4 md:gap-6`}
