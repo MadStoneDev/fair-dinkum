@@ -8,7 +8,7 @@
         <div className={`w-12 aspect-square rounded-full bg-accent`}></div>
         <div className={`flex-grow flex flex-col justify-center h-full`}>
           <h4
-            className={`mt-1 -mb-1.5 text-xs font-light text-dark/60 dark:text-light/50`}
+            className={`mt-1 -mb-1 text-xs font-light text-dark/60 dark:text-light/50`}
           >
             Few moments ago
           </h4>

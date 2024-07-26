@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import styled from "styled-components";
+import { IconMessageForward } from "@tabler/icons-react";
 
 const QuestionBlock = styled.span`
   &:empty::before {
@@ -15,15 +16,15 @@ export default function AskQuestion({ user }: { user: string }) {
 
   return (
     <article
-      className={`mb-4 relative flex flex-col border-2 border-dark dark:border-light md:rounded-2xl overflow-hidden`}
+      className={`mb-4 relative flex flex-col dark:border-light md:rounded-2xl overflow-hidden`}
     >
       {/* Header */}
       <div
-        className={`px-2 md:px-4 py-4 flex flex-row gap-4 h-full border-b border-dark/10 dark:border-light/10 bg-dark dark:bg-light text-light dark:text-dark`}
+        className={`px-2 md:px-4 py-4 flex flex-row gap-4 h-full border-b border-dark/10 dark:border-light/10 bg-dark dark:bg-light/15 text-light`}
       >
         <div className={`flex-grow flex flex-col justify-center h-full`}>
           <h4
-            className={`md:mt-1 -mb-0.5 md:-mb-1.5 text-xs lg:text-sm font-light opacity-60`}
+            className={`md:mt-1 -mb-0.5 md:-mb-1 text-xs lg:text-sm font-light opacity-60 dark:opacity-40`}
           >
             Hi logged in user,
           </h4>
@@ -38,10 +39,15 @@ export default function AskQuestion({ user }: { user: string }) {
         <QuestionBlock
           contentEditable
           data-placeholder={`Example: What's your favourite movie?`}
-          className={`px-2 md:px-4 py-4 min-w-full min-h-20 bg-transparent focus:ring-0 focus:border-0 focus:outline-none rounded-xl resize-none text-sm empty:font-light empty:italic text-dark dark:text-light empty:text-dark/60 empty:dark:text-light/70`}
+          className={`px-2 md:px-4 pt-4 pb-10 min-w-full min-h-20 bg-light focus:ring-0 focus:border-0 focus:outline-none lg:rounded-b-xl resize-none text-sm empty:font-light empty:italic text-dark empty:text-dark/60 overflow-hidden`}
         >
           {question}
         </QuestionBlock>
+        <button
+          className={`pl-1.5 pt-1.5 pb-1 pr-1 absolute bottom-0 right-0 bg-dark dark:bg-dark/85 hover:bg-accent hover:dark:bg-accent rounded-tl-xl text-light transition-all duration-500 ease-in-out`}
+        >
+          <IconMessageForward size={26} strokeWidth={1.5} />
+        </button>
       </div>
     </article>
   );

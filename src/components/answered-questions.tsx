@@ -8,7 +8,7 @@
         <div className={`w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-accent`}></div>
         <div className={`flex-grow flex flex-col justify-center h-full`}>
           <h4
-            className={`md:mt-1 -mb-1 md:-mb-1.5 text-xs font-light text-dark/60 dark:text-light/50`}
+            className={`md:mt-1 -mb-1 md:-mb-1 text-xs font-light text-dark/60 dark:text-light/50`}
           >
             Few moments ago
           </h4>
@@ -31,7 +31,7 @@
       <div className={`px-4 py-2 md:pb-4 bg-accent`}>
         <div className={`mb-4 flex flex-col justify-center`}>
           <h4
-            className={`mt-1 -mb-0.5 lg:-mb-1.5 text-xs font-light text-light/50`}
+            className={`mt-1 -mb-0.5 lg:-mb-1 text-xs font-light text-light/50`}
           >
             Few moments ago
           </h4>

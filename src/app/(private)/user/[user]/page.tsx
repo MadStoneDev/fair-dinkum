@@ -7,7 +7,7 @@ export default function User({ params }: { params: { user: string } }) {
   const { user } = params;
 
   return (
-    <main className="mb-10 grid grid-cols-1 lg:grid-cols-6 xl:grid-cols-8 gap-6 md:gap-0 transition-all duration-500 ease-in-out">
+    <main className="mb-16 grid grid-cols-1 lg:grid-cols-6 xl:grid-cols-8 gap-6 md:gap-0 transition-all duration-500 ease-in-out">
       <section
         className={`md:pl-8 col-span-3 hidden xl:flex flex-col gap-6 overflow-y-auto`}
       >
@@ -73,14 +73,13 @@ export default function User({ params }: { params: { user: string } }) {
         </div>
       </section>
 
-      <div className={`md:p-8 lg:hidden col-span-4`}>
-        <AskQuestion user={user} />
-      </div>
-
       {/* Right Column */}
       <section
         className={`p-0 md:pl-8 lg:pl-0 md:pr-8 col-span-4 xl:col-span-3 flex flex-col gap-4 md:gap-6`}
       >
+        <div className={`md:py-8 xl:hidden col-span-4`}>
+          <AskQuestion user={user} />
+        </div>
         <h2
           className={`mx-4 md:pr-10 pb-2 lg:w-max border-b border-dark/15 dark:border-light/15 md:text-lg font-bold tracking-tight text-accent`}
         >
