@@ -7,8 +7,10 @@ export default function User({ params }: { params: { user: string } }) {
   const { user } = params;
 
   return (
-    <main className="p-8 mb-10 grid grid-cols-8 gap-6 transition-all duration-500 ease-in-out">
-      <section className={`col-span-3 flex flex-col gap-6 overflow-y-auto`}>
+    <main className="mb-10 grid grid-cols-1 lg:grid-cols-6 xl:grid-cols-8 gap-6 md:gap-0 transition-all duration-500 ease-in-out">
+      <section
+        className={`md:pl-8 col-span-3 hidden xl:flex flex-col gap-6 overflow-y-auto`}
+      >
         {/* Ask a New Question */}
         <AskQuestion user={user} />
 
@@ -33,8 +35,12 @@ export default function User({ params }: { params: { user: string } }) {
       </section>
 
       {/* User Info */}
-      <section className={`col-span-2 relative flex justify-center`}>
-        <div className={`fixed flex flex-col items-center gap-1`}>
+      <section
+        className={`px-4 sm:px-6 md:px-8 col-span-4 lg:col-span-2 relative flex justify-center`}
+      >
+        <div
+          className={`mb-6 sm:mb-10 lg:fixed flex flex-col items-center gap-1`}
+        >
           <div
             className={`mb-3 w-32 aspect-square rounded-full bg-accent`}
           ></div>
@@ -68,9 +74,11 @@ export default function User({ params }: { params: { user: string } }) {
       </section>
 
       {/* Right Column */}
-      <section className={`col-span-3 flex flex-col gap-6`}>
+      <section
+        className={`p-0 md:pl-8 lg:pl-0 md:pr-8 col-span-4 xl:col-span-3 flex flex-col gap-4 md:gap-6`}
+      >
         <h2
-          className={`pr-10 pb-2 w-max border-b border-dark/15 dark:border-light/15 text-lg font-bold tracking-tight text-accent`}
+          className={`mx-4 md:pr-10 pb-2 lg:w-max border-b border-dark/15 dark:border-light/15 md:text-lg font-bold tracking-tight text-accent`}
         >
           Answered Questions
         </h2>

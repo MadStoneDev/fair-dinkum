@@ -1,7 +1,7 @@
 ﻿export default function UnansweredQuestions() {
   return (
     <article
-      className={`relative flex flex-col bg-light dark:bg-light/15 border-2 border-accent rounded-2xl`}
+      className={`relative flex flex-col bg-light dark:bg-light/15 md:rounded-2xl`}
     >
       {/* Header */}
       <div className={`p-4 flex flex-row gap-4 h-full`}>
