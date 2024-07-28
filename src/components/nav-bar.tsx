@@ -51,10 +51,10 @@ export default function NavBar() {
           <NavBarItem title={"Home"} href={"/"} onClick={closeMenu} />
           <NavBarItem
             title={"How's it work?"}
-            href={"/about"}
+            href={"/hows-it-work"}
             onClick={closeMenu}
           />
-          <NavBarItem title={"Premium"} href={"/premium"} onClick={closeMenu} />
+          {/*<NavBarItem title={"Premium"} href={"/premium"} onClick={closeMenu} />*/}
         </ul>
 
         <section

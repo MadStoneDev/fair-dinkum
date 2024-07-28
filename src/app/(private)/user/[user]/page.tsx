@@ -1,6 +1,7 @@
 ﻿import AskQuestion from "@/components/ask-question";
 import UnansweredQuestions from "@/components/unanswered-questions";
 import AnsweredQuestions from "@/components/answered-questions";
+import Link from "next/link";
 
 export default function User({ params }: { params: { user: string } }) {
   // Params
@@ -54,15 +55,21 @@ export default function User({ params }: { params: { user: string } }) {
             August, 2024
           </p>
           <div className={`pb-10 flex flex-row gap-4`}>
-            <h3 className={`py-2 font-bold`}>
+            <Link
+              className={`py-2 font-bold hover:text-accent`}
+              href={`/user/${user}/followers`}
+            >
               15<span className={`pl-2 font-light opacity-70`}>Followers</span>
-            </h3>
+            </Link>
             <div
               className={`w-0.5 min-h-full bg-dark/50 dark:bg-light/50`}
             ></div>
-            <h3 className={`py-2 font-bold`}>
+            <Link
+              className={`py-2 font-bold hover:text-accent`}
+              href={`/user/${user}/following`}
+            >
               23<span className={`pl-2 font-light opacity-70`}>Following</span>
-            </h3>
+            </Link>
           </div>
           <p
             className={`max-w-52 text-sm font-light text-dark/50 dark:text-light/50 tracking-tighter text-center`}

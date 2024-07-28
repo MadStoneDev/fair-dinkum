@@ -44,6 +44,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-Black.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+
 body {
   @apply text-dark dark:text-light;
 }
