@@ -12,7 +12,7 @@ export default function SettingsNavigation({
   availableTabs: string[];
 }) {
   return (
-    <nav className={`${className} flex flex-col gap-2`}>
+    <nav className={`flex flex-col gap-2 min-h-full ${className}`}>
       {availableTabs.map((tab) => (
         <div
           className={`cursor-pointer p-3 ${

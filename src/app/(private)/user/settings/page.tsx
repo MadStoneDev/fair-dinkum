@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import SettingsNavigation from "@/components/settings-navigation";
+import SettingsBlock from "@/components/settings-block";
 
 export default function Settings() {
   // States
@@ -11,7 +12,7 @@ export default function Settings() {
     <main
       className={`px-8 flex flex-col justify-start gap-4 transition-all duration-500 ease-in-out`}
     >
-      <section>
+      <section className={`mb-4`}>
         <h2 className={`text-2xl font-bold`}>Settings</h2>
         <h3 className={`text-sm text-gray/50 dark:text-light/30`}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis nisi
@@ -40,6 +41,20 @@ export default function Settings() {
 const SETTINGS_ARTICLES: { [key: string]: React.JSX.Element } = {
   Profile: (
     <>
+      <SettingsBlock
+        blockTitle="Username"
+        blockDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis nisi"
+        blockInfo={
+          <>
+            <input type="text" placeholder="Username" />
+          </>
+        }
+        action={
+          <>
+            <button className={`bg-accent text-light`}>Save</button>
+          </>
+        }
+      />
       <article
         className={`pb-6 grid grid-cols-5 items-stretch gap-10 border-b border-dark/10 dark:border-light/10`}
       >
