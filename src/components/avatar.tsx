@@ -1,29 +1,33 @@
 ﻿"use client";
 
+import React from "react";
 import styled from "styled-components";
 
-const AvatarWrapper = styled.div``;
+const AvatarWrapper = styled.div`
+  position: relative;
+`;
+
 const AvatarTrack = styled.div``;
+
+const AvatarProgress = styled.div`
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  transition: height 0.5s ease;
+  z-index: 1;
+`;
 
 export default function Avatar({
   progress,
   size = 100,
+  image = "",
 }: {
   progress: number;
   size?: number;
+  image?: string;
 }) {
-  const totalPerimeter = 2160;
-
-  const calculateStrokeDashoffset = () => {
-    return ((100 - progress) / 100) * totalPerimeter;
-  };
-
   return (
-    <AvatarWrapper
-      style={{
-        width: `${size}px`,
-      }}
-    >
+    <AvatarWrapper style={{ width: `${size}px` }}>
       <svg viewBox="0 0 100 111">
         {/* Margin */}
         <path
@@ -35,9 +39,7 @@ export default function Avatar({
         {/* Track */}
         <path
           d="M10860 400.506c2-1.176 4.6-1.176 6.6 0l25.6 14.78c2 1.176 3.3 3.35 3.3 5.702v29.561c0 2.352-1.3 4.526-3.3 5.702l-25.6 14.78c-2 1.176-4.6 1.176-6.6 0l-25.6-14.78c-2-1.176-3.3-3.35-3.3-5.702v-29.561c0-2.352 1.3-4.526 3.3-5.702l25.6-14.78Z"
-          style={{
-            fill: "#68e1eb",
-          }}
+          className={`fill-dark/50`}
           transform="translate(-14800.45 -540.296) scale(1.36703)"
         />
 
@@ -47,14 +49,33 @@ export default function Avatar({
           className={`fill-light dark:fill-gray`}
           transform="translate(-14800.45 -540.296) scale(1.36703)"
         />
-        <path
-          d="M10860.4 409.586c1.8-1.045 4-1.045 5.8 0l18.3 10.557a5.852 5.852 0 0 1 2.9 5.068v21.115a5.85 5.85 0 0 1-2.9 5.068l-18.3 10.557a5.757 5.757 0 0 1-5.8 0l-18.3-10.557a5.85 5.85 0 0 1-2.9-5.068v-21.115c0-2.09 1.1-4.022 2.9-5.068l18.3-10.557Z"
-          style={{
-            fill: "#e6a91a",
-          }}
-          transform="translate(-14800.45 -540.296) scale(1.36703)"
+
+        {/* Image */}
+        <defs>
+          <clipPath id="clipImage">
+            <path
+              d="M10860.4 409.586c1.8-1.045 4-1.045 5.8 0l18.3 10.557a5.852 5.852 0 0 1 2.9 5.068v21.115a5.85 5.85 0 0 1-2.9 5.068l-18.3 10.557a5.757 5.757 0 0 1-5.8 0l-18.3-10.557a5.85 5.85 0 0 1-2.9-5.068v-21.115c0-2.09 1.1-4.022 2.9-5.068l18.3-10.557Z"
+              transform="translate(-14800.45 -540.296) scale(1.36703)"
+            />
+          </clipPath>
+        </defs>
+
+        <image
+          xlinkHref={image}
+          className={`object-cover`}
+          clipPath="url(#clipImage)"
+          width={`100%`}
+          height={`100%`}
         />
       </svg>
+
+      {/*<AvatarProgress*/}
+      {/*  className={`bg-accent`}*/}
+      {/*  style={{*/}
+      {/*    height: `${progress}%`,*/}
+      {/*    clipPath: "url(#clipTrack)",*/}
+      {/*  }}*/}
+      {/*/>*/}
     </AvatarWrapper>
   );
 }

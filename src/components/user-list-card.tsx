@@ -12,19 +12,29 @@ import {
 interface UserListCardProps {
   username: string;
   tagline: string;
+  avatar?: string;
+  cover?: string;
 }
 
 export default function UserListCard({
   username = "username",
   tagline = "a short tagline",
+  avatar = "/dummy/avatar.jpg",
+  cover = "/dummy/cover.jpg",
 }: UserListCardProps) {
   return (
     <article
       className={`flex flex-row flex-nowrap items-center bg-light dark:bg-gray rounded-xl overflow-hidden`}
     >
-      <div className={`bg-accent h-full w-12`}></div>
+      <div
+        className={`bg-accent h-full w-12`}
+        style={{
+          backgroundImage: `url(${cover})`,
+          backgroundSize: `cover`,
+        }}
+      ></div>
       <div className={`-ml-[25px] grid justify-center`}>
-        <Avatar progress={50} size={50} />
+        <Avatar progress={50} size={50} image={avatar} />
       </div>
       <div
         className={`flex-grow pl-1 md:pl-2 py-4 flex justify-between items-center gap-6`}

@@ -20,23 +20,36 @@ export default function UserFollowers({
         <UserListCard
           username={"theHalfman"}
           tagline={"A Lannister always pays his debts"}
-        />
-
-        <UserListCard username={"aryaStark"} tagline={"The North remembers"} />
-
-        <UserListCard
-          username={"sterlingArcher"}
-          tagline={"Welcome to the danger zone"}
+          avatar={"/dummy/avatar_2.jpg"}
+          cover={"/dummy/cover_2.jpg"}
         />
 
         <UserListCard
-          username={"sterlingArcher"}
-          tagline={"Welcome to the danger zone"}
+          username={"aryaStark"}
+          tagline={"The North remembers"}
+          avatar={"/dummy/avatar_3.jpg"}
+          cover={"/dummy/cover.jpg"}
         />
 
         <UserListCard
           username={"sterlingArcher"}
           tagline={"Welcome to the danger zone"}
+          avatar={"/dummy/avatar.jpg"}
+          cover={"/dummy/cover_2.jpg"}
+        />
+
+        <UserListCard
+          username={"sterlingArcher"}
+          tagline={"Welcome to the danger zone"}
+          avatar={"/dummy/avatar_2.jpg"}
+          cover={"/dummy/cover.jpg"}
+        />
+
+        <UserListCard
+          username={"sterlingArcher"}
+          tagline={"Welcome to the danger zone"}
+          avatar={"/dummy/avatar_2.jpg"}
+          cover={"/dummy/cover_3.jpg"}
         />
       </section>
     </main>
