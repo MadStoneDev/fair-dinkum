@@ -1,19 +1,14 @@
 ﻿import Avatar from "@/components/avatar";
 import Link from "next/link";
-import {
-  IconHelpHexagon,
-  IconHexagon2,
-  IconHexagonFilled,
-  IconHexagonLetterU,
-  IconMessage2Question,
-  IconMoodPlus,
-} from "@tabler/icons-react";
+import { IconMessage2Question, IconMoodPlus } from "@tabler/icons-react";
 
 interface UserListCardProps {
   username: string;
   tagline: string;
   avatar?: string;
   cover?: string;
+  progress?: number;
+  level?: number;
 }
 
 export default function UserListCard({
@@ -21,6 +16,8 @@ export default function UserListCard({
   tagline = "a short tagline",
   avatar = "/dummy/avatar.jpg",
   cover = "/dummy/cover.jpg",
+  progress = 0,
+  level = 0,
 }: UserListCardProps) {
   return (
     <article
@@ -34,7 +31,12 @@ export default function UserListCard({
         }}
       ></div>
       <div className={`-ml-[25px] grid justify-center`}>
-        <Avatar progress={50} size={50} image={avatar} />
+        <Avatar
+          progress={progress}
+          level={level || 0}
+          size={50}
+          image={avatar}
+        />
       </div>
       <div
         className={`flex-grow pl-1 md:pl-2 py-4 flex justify-between items-center gap-6`}
