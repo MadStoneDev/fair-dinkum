@@ -27,12 +27,12 @@ export default function UserListCard({
         <Avatar progress={50} size={50} />
       </div>
       <div
-        className={`flex-grow pl-2 py-4 flex justify-between items-center gap-6`}
+        className={`flex-grow pl-1 md:pl-2 py-4 flex justify-between items-center gap-6`}
       >
         <section className={`text-center`}>
           <Link
             href={`/user/${username}`}
-            className={`-mb-1 font-semibold text-lg hover:text-accent transition-all duration-500 ease-in-out`}
+            className={`-mb-1 font-semibold text-sm md:text-lg hover:text-accent transition-all duration-500 ease-in-out`}
           >
             {username}
           </Link>
@@ -42,12 +42,12 @@ export default function UserListCard({
             className={`px-4 flex flex-col items-center border-r-[0.5px] border-dark/10 dark:border-light/20`}
           >
             <h3 className={`font-semibold text-xs md:text-sm`}>870</h3>
-            <h4 className={`text-xs`}>Trackers</h4>
+            <h4 className={`text-[0.65rem] md:text-xs`}>Trackers</h4>
           </div>
 
           <div className={`px-4 flex flex-col items-center`}>
             <h3 className={`font-semibold text-xs md:text-sm`}>870</h3>
-            <h4 className={`text-xs`}>Tracking</h4>
+            <h4 className={`text-[0.65rem] md:text-xs`}>Tracking</h4>
           </div>
         </section>
       </div>
@@ -56,13 +56,13 @@ export default function UserListCard({
       >
         <Link
           href={`/user/${username}/follow`}
-          className={`px-4 py-2 grid place-content-center hover:bg-accent hover:text-light text-center transition-all duration-500 ease-in-out`}
+          className={`px-2 md:px-4 py-2 grid place-content-center hover:bg-accent hover:text-light text-center transition-all duration-500 ease-in-out`}
         >
           <IconMoodPlus stroke={1.75} width={22} />
         </Link>
         <Link
           href={`/user/${username}/ask`}
-          className={`px-4 py-2 grid place-content-center hover:bg-accent hover:text-light text-center transition-all duration-500 ease-in-out`}
+          className={`px-2 md:px-4 py-2 grid place-content-center hover:bg-accent hover:text-light text-center transition-all duration-500 ease-in-out`}
         >
           <IconMessage2Question stroke={1.75} width={22} />
         </Link>
