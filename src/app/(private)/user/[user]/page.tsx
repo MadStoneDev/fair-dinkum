@@ -15,9 +15,6 @@ export default function User({ params }: { params: { user: string } }) {
         {/* Ask a New Question */}
         <AskQuestion user={user} />
 
-        {/* Separator */}
-        {/*<div className={`h-px w-full bg-dark/10 dark:bg-light/10`}></div>*/}
-
         <h2
           className={`mt-2 pr-10 pb-2 w-max border-b border-dark/15 dark:border-light/15 text-lg font-bold tracking-tight text-accent`}
         >
@@ -56,19 +53,19 @@ export default function User({ params }: { params: { user: string } }) {
           </p>
           <div className={`pb-10 flex flex-row gap-4`}>
             <Link
-              className={`py-2 font-bold hover:text-accent`}
+              className={`py-2 font-semibold hover:text-accent`}
               href={`/user/${user}/followers`}
             >
-              15<span className={`pl-2 font-light opacity-70`}>Followers</span>
+              15<span className={`pl-1 font-light opacity-70`}>Followers</span>
             </Link>
             <div
               className={`w-0.5 min-h-full bg-dark/50 dark:bg-light/50`}
             ></div>
             <Link
-              className={`py-2 font-bold hover:text-accent`}
+              className={`py-2 font-semibold hover:text-accent`}
               href={`/user/${user}/following`}
             >
-              23<span className={`pl-2 font-light opacity-70`}>Following</span>
+              23<span className={`pl-1 font-light opacity-70`}>Following</span>
             </Link>
           </div>
           <p

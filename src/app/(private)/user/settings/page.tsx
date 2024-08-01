@@ -1,131 +1,83 @@
 ﻿"use client";
 
 import React, { useState } from "react";
+
 import SettingsNavigation from "@/components/settings-navigation";
-import SettingsBlock from "@/components/settings-block";
+import SettingsProfile from "@/components/settings-profile";
+import SettingsPrivacy from "@/components/settings-privacy";
+import SettingsNotifications from "@/components/settings-notifications";
+import SettingsAccount from "@/components/settings-account";
 
 export default function Settings() {
   // States
   const [activeTab, setActiveTab] = useState("Profile");
 
+  // Settings States
+  const [askAnonymously, setAskAnonymously] = useState<boolean>(false);
+  const [allowSensitiveQuestions, setAllowSensitiveQuestions] =
+    useState<boolean>(false);
+  const [allowSensitiveAnswers, setAllowSensitiveAnswers] =
+    useState<boolean>(false);
+  const [showAnswersTo, setShowAnswersTo] = useState<string>("everyone");
+  const [openShowAnswersTo, setOpenShowAnswersTo] = useState<boolean>(false);
+  const [unBlurSensitiveContent, setUnBlurSensitiveContent] =
+    useState<boolean>(false);
+
+  const stateProps = {
+    askAnonymously,
+    setAskAnonymously,
+    allowSensitiveQuestions,
+    setAllowSensitiveQuestions,
+    allowSensitiveAnswers,
+    setAllowSensitiveAnswers,
+    showAnswersTo,
+    setShowAnswersTo,
+    openShowAnswersTo,
+    setOpenShowAnswersTo,
+    unBlurSensitiveContent: unBlurSensitiveContent,
+    setUnBlurSensitiveContent: setUnBlurSensitiveContent,
+  };
+
+  const settingTabs = ["Profile", "Privacy", "Notifications", "Account"];
+
   return (
     <main
-      className={`px-8 flex flex-col justify-start gap-4 transition-all duration-500 ease-in-out`}
+      className={`px-0 md:px-8 flex flex-col justify-start gap-4 transition-all duration-500 ease-in-out`}
     >
-      <section className={`mb-4`}>
+      <section className={`px-4 sm:px-8 md:px-0 mb-4`}>
         <h2 className={`text-2xl font-bold`}>Settings</h2>
         <h3 className={`text-sm text-gray/50 dark:text-light/30`}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis nisi
+          Customise <span className={`font-bold`}>fair</span>Dinkum to suit you.
         </h3>
       </section>
 
-      <section className={`grid grid-cols-7`}>
+      <section className={`flex flex-col lg:grid grid-cols-7`}>
         {/* Navigation */}
         <SettingsNavigation
-          className={`col-span-1`}
+          className={`px-4 sm:px-8 md:px-0 col-span-1`}
           activeTab={activeTab}
           setActiveTab={setActiveTab}
-          availableTabs={["Profile", "Privacy", "Notifications"]}
+          availableTabs={settingTabs}
         />
 
         <div
-          className={`col-span-6 p-6 flex flex-col gap-8 bg-light dark:bg-light/15 rounded-r-3xl text-sm text-dark dark:text-light`}
+          className={`px-4 sm:px-8 mb-16 col-span-6 py-6 flex flex-col gap-8 bg-light dark:bg-light/15 lg:rounded-r-3xl text-sm text-dark dark:text-light`}
         >
-          {SETTINGS_ARTICLES[activeTab]}
+          {SETTINGS_ARTICLES[activeTab](stateProps)}
         </div>
       </section>
+
+      <section
+        className={`md:hidden flex flex-col lg:grid grid-cols-7`}
+      ></section>
     </main>
   );
 }
 
-const SETTINGS_ARTICLES: { [key: string]: React.JSX.Element } = {
-  Profile: (
-    <>
-      <SettingsBlock
-        blockTitle="Username"
-        blockDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis nisi"
-        blockInfo={
-          <>
-            <input type="text" placeholder="Username" />
-          </>
-        }
-        action={
-          <>
-            <button className={`bg-accent text-light`}>Save</button>
-          </>
-        }
-      />
-      <article
-        className={`pb-6 grid grid-cols-5 items-stretch gap-10 border-b border-dark/10 dark:border-light/10`}
-      >
-        <div className={`col-span-4 flex flex-col gap-1`}>
-          <p className={`font-medium`}>Username</p>
-          <desc className={`mb-2 opacity-50`}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis
-            nisi
-          </desc>
-        </div>
-        <div className={`grid-cols-1 flex flex-col justify-center items-end`}>
-          <input type="text" placeholder="Username" />
-        </div>
-      </article>
-
-      <article
-        className={`pb-6 grid grid-cols-5 items-stretch gap-10 border-b border-dark/10 dark:border-light/10`}
-      >
-        <div className={`col-span-4 flex flex-col gap-1`}>
-          <p className={`font-medium`}>Email</p>
-          <desc className={`mb-2 opacity-50`}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis
-            nisi
-          </desc>
-        </div>
-        <div className={`grid-cols-1 flex flex-col justify-center items-end`}>
-          <input type="text" placeholder="Email" />
-        </div>
-      </article>
-
-      <article className={`grid grid-cols-5 items-stretch gap-10`}>
-        <div className={`col-span-4 flex flex-col gap-1`}>
-          <p className={`font-medium`}>Password</p>
-          <desc className={`mb-2 opacity-50`}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis
-            nisi
-          </desc>
-        </div>
-      </article>
-    </>
-  ),
-
-  Privacy: (
-    <>
-      <article
-        className={`pb-6 grid grid-cols-5 items-stretch gap-10 border-b border-dark/10 dark:border-light/10`}
-      >
-        <div className={`col-span-4 flex flex-col gap-1`}>
-          <p className={`font-medium`}>Password</p>
-          <desc className={`mb-2 opacity-50`}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis
-            nisi
-          </desc>
-        </div>
-      </article>
-    </>
-  ),
-
-  Notifications: (
-    <>
-      <article
-        className={`pb-6 grid grid-cols-5 items-stretch gap-10 border-b border-dark/10 dark:border-light/10`}
-      >
-        <div className={`col-span-4 flex flex-col gap-1`}>
-          <p className={`font-medium`}>Password</p>
-          <desc className={`mb-2 opacity-50`}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis
-            nisi
-          </desc>
-        </div>
-      </article>
-    </>
-  ),
-};
+const SETTINGS_ARTICLES: { [key: string]: (props: any) => React.JSX.Element } =
+  {
+    Profile: () => <SettingsProfile />,
+    Privacy: (props) => <SettingsPrivacy {...props} />,
+    Notifications: () => <SettingsNotifications />,
+    Account: () => <SettingsAccount />,
+  };

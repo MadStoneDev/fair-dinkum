@@ -17,9 +17,12 @@ export default function NavBar() {
   return (
     <nav className={`p-8 flex flex-row items-center justify-between w-full`}>
       {/* Logo */}
-      <p className={`font-bold text-lg`}>
+      <Link
+        href={`/`}
+        className={`font-bold text-lg hover:text-accent transition-all duration-500 ease-in-out`}
+      >
         fair<span className={`font-light`}>Dinkum</span>
-      </p>
+      </Link>
 
       <button
         className={`block md:hidden ${

@@ -12,14 +12,17 @@ export default function SettingsNavigation({
   availableTabs: string[];
 }) {
   return (
-    <nav className={`flex flex-col gap-2 min-h-full ${className}`}>
+    <nav
+      className={`flex flex-wrap md:flex-nowrap lg:flex-col gap-2 min-h-full ${className}`}
+    >
       {availableTabs.map((tab) => (
         <div
-          className={`cursor-pointer p-3 ${
+          key={`settings-nav-${tab}`}
+          className={`cursor-pointer p-2 md:p-3 ${
             activeTab === tab
               ? "bg-accent text-light"
               : "hover:bg-accent/10 dark:hover:bg-light/20"
-          } rounded-l-full text-sm transition-all duration-500 ease-in-out`}
+          } lg:rounded-l-full text-xs md:text-sm transition-all duration-500 ease-in-out`}
           onClick={() => setActiveTab(tab)}
         >
           {tab}

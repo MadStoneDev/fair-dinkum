@@ -24,7 +24,7 @@ const config: Config = {
         dark: "#171F28",
         accent: "#854D47",
         light: "#EBEBEB",
-        gray: "#171F2B",
+        gray: "#414851",
       },
 
       keyframes: {

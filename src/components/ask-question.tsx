@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import styled from "styled-components";
 import { IconMessageForward } from "@tabler/icons-react";
 
@@ -40,11 +40,13 @@ export default function AskQuestion({ user }: { user: string }) {
           contentEditable
           data-placeholder={`Example: What's your favourite movie?`}
           className={`px-2 md:px-4 pt-4 pb-10 min-w-full min-h-20 bg-light focus:ring-0 focus:border-0 focus:outline-none lg:rounded-b-xl resize-none text-sm empty:font-light empty:italic text-dark empty:text-dark/60 overflow-hidden`}
-        >
-          {question}
-        </QuestionBlock>
+          onInput={(e: FormEvent) => {
+            setQuestion(e.currentTarget.innerHTML);
+          }}
+        />
         <button
           className={`pl-1.5 pt-1.5 pb-1 pr-1 absolute bottom-0 right-0 bg-dark dark:bg-dark/85 hover:bg-accent hover:dark:bg-accent rounded-tl-xl text-light transition-all duration-500 ease-in-out`}
+          onClick={() => console.log(question)}
         >
           <IconMessageForward size={26} strokeWidth={1.5} />
         </button>
