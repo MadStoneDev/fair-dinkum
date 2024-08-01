@@ -19,7 +19,11 @@ export default function Avatar({
   };
 
   return (
-    <AvatarWrapper className={`w-24`}>
+    <AvatarWrapper
+      style={{
+        width: `${size}px`,
+      }}
+    >
       <svg viewBox="0 0 100 111">
         {/* Margin */}
         <path
