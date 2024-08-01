@@ -22,7 +22,7 @@ export default function UserCard({
     <article className={`bg-light dark:bg-gray rounded-2xl overflow-hidden`}>
       <div className={`bg-accent w-full h-16`}></div>
       <div className={`mx-auto -mt-12 grid justify-center`}>
-        <Avatar progress={50} />
+        {/*<Avatar progress={50} />*/}
       </div>
       <div className={`px-6 pt-4 pb-8 flex flex-col items-center gap-6`}>
         <section className={`text-center`}>
