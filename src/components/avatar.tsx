@@ -7,6 +7,14 @@ const AvatarWrapper = styled.div`
   position: relative;
 `;
 
+interface LevelColorsProps {
+  [key: number]: {
+    bg: string;
+    text: string;
+    fill: string;
+  };
+}
+
 export default function Avatar({
   progress,
   level,
@@ -18,21 +26,21 @@ export default function Avatar({
   size?: number;
   image?: string;
 }) {
-  const levelColors: { [key: number]: string } = {
-    1: "bg-light text-dark",
-    5: "bg-neutral-400 text-dark",
-    10: "bg-sky-500 text-light",
-    20: "bg-blue-700 text-light",
-    30: "bg-teal-600 text-light",
-    40: "bg-lime-600 text-light",
-    50: "bg-emerald-600 text-light",
-    60: "bg-orange-600 text-light",
-    70: "bg-pink-500 text-light",
-    80: "bg-rose-700 text-light",
-    90: "bg-purple-600 text-light",
-    100: "bg-fuchsia-950 text-light",
-    125: "bg-amber-500 text-light",
-    150: "bg-yellow-400 text-dark",
+  const levelColors: LevelColorsProps = {
+    1: { bg: "bg-light", text: "text-dark", fill: "fill-neutral-700" },
+    5: { bg: "bg-neutral-500", text: "text-dark", fill: "fill-neutral-500" },
+    10: { bg: "bg-lime-400", text: "text-dark", fill: "fill-lime-400" },
+    20: { bg: "bg-emerald-400", text: "text-dark", fill: "fill-emerald-400" },
+    30: { bg: "bg-teal-300", text: "text-dark", fill: "fill-teal-300" },
+    40: { bg: "bg-sky-500", text: "text-light", fill: "fill-sky-500" },
+    50: { bg: "bg-blue-600", text: "text-light", fill: "fill-blue-600" },
+    60: { bg: "bg-indigo-700", text: "text-light", fill: "fill-indigo-700" },
+    70: { bg: "bg-purple-600", text: "text-light", fill: "fill-purple-600" },
+    80: { bg: "bg-fuchsia-800", text: "text-light", fill: "fill-fuchsia-800" },
+    90: { bg: "bg-pink-500", text: "text-light", fill: "fill-pink-500" },
+    100: { bg: "bg-rose-700", text: "text-light", fill: "fill-rose-700" },
+    125: { bg: "bg-amber-500", text: "text-light", fill: "fill-amber-500" },
+    150: { bg: "bg-yellow-400", text: "text-dark", fill: "fill-yellow-400" },
   };
 
   const getLevelColor = (level: number) => {
@@ -66,7 +74,7 @@ export default function Avatar({
         <rect
           x="0"
           y="0"
-          className={`fill-black/20 dark:fill-light/15`}
+          className={`fill-gray/40 dark:fill-light/60`}
           clipPath={"url(#clipTrack)"}
           width="100%"
           height="100%"
@@ -75,7 +83,7 @@ export default function Avatar({
         <rect
           x="0"
           y={`${100 - progress}%`}
-          className={`fill-accent dark:fill-light/70`}
+          className={`${getLevelColor(level).fill}`}
           clipPath={"url(#clipTrack)"}
           width="100%"
           height="100%"
@@ -109,9 +117,11 @@ export default function Avatar({
 
       {/* User Level */}
       <div
-        className={`absolute bottom-0 right-0 grid place-content-center ${getLevelColor(
-          level,
-        )} w-5 aspect-square rounded-full font-semibold text-[0.65rem] text-dark shadow-lg shadow-black/50`}
+        className={`absolute bottom-0 right-0 grid place-content-center ${
+          getLevelColor(level).bg
+        } ${
+          getLevelColor(level).text
+        } w-5 aspect-square rounded-full font-semibold text-[0.6rem] text-dark shadow-lg shadow-black/50`}
       >
         {level || 0}
       </div>
