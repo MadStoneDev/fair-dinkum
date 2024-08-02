@@ -2,98 +2,91 @@
 import UnansweredQuestions from "@/components/unanswered-questions";
 import AnsweredQuestions from "@/components/answered-questions";
 import Link from "next/link";
+import Avatar from "@/components/avatar";
+import { Footprints } from "lucide-react";
+import { IconMessageForward } from "@tabler/icons-react";
 
 export default function User({ params }: { params: { user: string } }) {
   // Params
   const { user } = params;
 
   return (
-    <main className="mb-16 grid grid-cols-1 lg:grid-cols-6 xl:grid-cols-8 gap-6 md:gap-0 transition-all duration-500 ease-in-out">
+    <main className="px-0 md:px-4 lg:px-8 mb-16 grid grid-cols-1 lg:grid-cols-3 gap-6 overflow-hidden transition-all duration-500 ease-in-out">
+      {/* User Card */}
       <section
-        className={`md:pl-8 col-span-3 hidden xl:flex flex-col gap-6 overflow-y-auto`}
+        className={`col-span-1 flex flex-col items-center bg-light dark:bg-gray w-full h-min md:rounded-2xl overflow-hidden`}
       >
-        {/* Ask a New Question */}
-        <AskQuestion user={user} />
+        {/* Header */}
+        <article
+          className={`w-full h-32`}
+          style={{
+            backgroundImage: `url(/dummy/cover.jpg)`,
+            backgroundSize: `cover`,
+            backgroundPosition: `center`,
+            backgroundRepeat: `no-repeat`,
+          }}
+        ></article>
 
-        <h2
-          className={`mt-2 pr-10 pb-2 w-max border-b border-dark/15 dark:border-light/15 text-lg font-bold tracking-tight text-accent`}
-        >
-          You asked {user}
-        </h2>
-        <p className={`text-sm italic font-light opacity-50`}>
-          You haven't asked {user} any questions yet.
-        </p>
-        {/* Unanswered Question */}
-        <UnansweredQuestions />
-        <UnansweredQuestions />
-        <UnansweredQuestions />
-        <UnansweredQuestions />
-        <UnansweredQuestions />
-        <UnansweredQuestions />
-      </section>
+        {/* Avatar */}
+        <article className={`-mt-[85px] grid place-content-center`}>
+          <Avatar
+            username={"username"}
+            progress={60}
+            level={80}
+            image={"/dummy/avatar.jpg"}
+            size={"large"}
+          />
+        </article>
 
-      {/* User Info */}
-      <section
-        className={`px-4 sm:px-6 md:px-8 col-span-4 lg:col-span-2 relative flex justify-center`}
-      >
-        <div
-          className={`mb-6 sm:mb-10 lg:fixed flex flex-col items-center gap-1`}
-        >
-          <div
-            className={`mb-3 w-32 aspect-square rounded-full bg-accent`}
-          ></div>
-          <h1 className={`text-xl tracking-tight text-dark dark:text-light`}>
-            {user}
+        {/* Information */}
+        <article className={`p-4 grid place-content-center`}>
+          <h1 className={`font-semibold text-2xl text-dark dark:text-light`}>
+            username
           </h1>
-          <p
-            className={`mb-3 max-w-40 font-light tracking-tight text-sm text-center text-dark/50 dark:text-light/50`}
+          <h3>a cool tagline</h3>
+        </article>
+
+        {/* Stats */}
+
+        {/* Badges */}
+
+        {/* Links */}
+
+        {/* Actions */}
+        <article
+          className={`p-8 grid grid-cols-2 gap-4 w-full max-w-md text-sm`}
+        >
+          <button
+            className={`p-2 flex items-center justify-center gap-1 bg-white border border-accent rounded-xl font-medium text-accent`}
           >
-            member at <span className={`font-bold`}>fair</span>Dinkum since
-            August, 2024
-          </p>
-          <div className={`pb-10 flex flex-row gap-4`}>
-            <Link
-              className={`py-2 font-semibold hover:text-accent`}
-              href={`/user/${user}/followers`}
-            >
-              15<span className={`pl-1 font-light opacity-70`}>Followers</span>
-            </Link>
-            <div
-              className={`w-0.5 min-h-full bg-dark/50 dark:bg-light/50`}
-            ></div>
-            <Link
-              className={`py-2 font-semibold hover:text-accent`}
-              href={`/user/${user}/following`}
-            >
-              23<span className={`pl-1 font-light opacity-70`}>Following</span>
-            </Link>
-          </div>
-          <p
-            className={`max-w-52 text-sm font-light text-dark/50 dark:text-light/50 tracking-tighter text-center`}
+            Track
+            <Footprints size={18} />
+          </button>
+          <button
+            className={`p-2 flex items-center justify-center gap-1 bg-accent rounded-xl text-light`}
           >
-            this is a quick bio about this user and all of the things they want
-            to tell us about themselves.
-          </p>
-        </div>
+            Ask
+            <IconMessageForward size={24} />
+          </button>
+        </article>
       </section>
 
-      {/* Right Column */}
       <section
-        className={`p-0 md:pl-8 lg:pl-0 md:pr-8 col-span-4 xl:col-span-3 flex flex-col gap-4 md:gap-6`}
+        className={`col-span-2 grid grid-cols-1 gap-4 items-center w-full rounded-2xl overflow-hidden`}
       >
-        <div className={`md:py-8 xl:hidden col-span-4`}>
+        {/* Profile Navigation */}
+        {/*<div className={`grid grid-cols-1 gap-4`}></div>*/}
+
+        {/* Feed */}
+        <div className={`grid grid-cols-1 gap-4`}>
+          {/* Ask a New Question */}
           <AskQuestion user={user} />
+
+          <AnsweredQuestions user={user} />
+          <AnsweredQuestions user={user} />
+          <AnsweredQuestions user={user} />
+          <AnsweredQuestions user={user} />
         </div>
-        <h2
-          className={`mx-4 md:pr-10 pb-2 lg:w-max border-b border-dark/15 dark:border-light/15 md:text-lg font-bold tracking-tight text-accent`}
-        >
-          Answered Questions
-        </h2>
-        {/* Answered Question */}
-        <AnsweredQuestions user={user} />
-        <AnsweredQuestions user={user} />
-        <AnsweredQuestions user={user} />
-        <AnsweredQuestions user={user} />
       </section>
     </main>
   );

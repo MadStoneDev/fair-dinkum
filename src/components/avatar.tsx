@@ -5,15 +5,7 @@ import styled from "styled-components";
 
 const AvatarWrapper = styled.div``;
 
-const AvatarImage = styled.div`
-  width: 70%;
-  height: 70%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  z-index: 0;
-`;
+const AvatarImage = styled.div``;
 
 interface LevelColorsProps {
   [key: number]: {
@@ -27,14 +19,16 @@ export default function Avatar({
   username = "",
   progress,
   level,
-  size = 100,
+  size = "small",
   image = "",
+  className = "",
 }: {
   username: string;
   progress: number;
   level: number;
-  size?: number;
+  size?: "small" | "medium" | "large";
   image?: string;
+  className?: string;
 }) {
   const levelColors: LevelColorsProps = {
     1: { bg: "bg-light", text: "text-dark", fill: "fill-neutral-700" },
@@ -53,6 +47,30 @@ export default function Avatar({
     150: { bg: "bg-yellow-400", text: "text-dark", fill: "fill-yellow-400" },
   };
 
+  const avatarSize = {
+    small: `50`,
+    medium: `100`,
+    large: `150`,
+  };
+
+  const levelPosition = {
+    small: `bottom-0 right-0`,
+    medium: `bottom-0 right-0`,
+    large: `bottom-3 right-4`,
+  };
+
+  const levelWidth = {
+    small: `w-5`,
+    medium: `w-8`,
+    large: `w-10`,
+  };
+
+  const levelFontSize = {
+    small: `0.6rem`,
+    medium: `0.8rem`,
+    large: `1rem`,
+  };
+
   const getLevelColor = (level: number) => {
     return Object.keys(levelColors).reduce((acc, threshold) => {
       return level >= parseInt(threshold)
@@ -62,7 +80,10 @@ export default function Avatar({
   };
 
   return (
-    <AvatarWrapper className={`relative`} style={{ width: `${size}px` }}>
+    <AvatarWrapper
+      className={`relative`}
+      style={{ width: `${avatarSize[size]}px` }}
+    >
       <svg viewBox="0 0 100 111" className={`object-cover`}>
         {/* Margin */}
         <path
@@ -108,7 +129,11 @@ export default function Avatar({
       </svg>
 
       <AvatarImage
-        className={`absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2`}
+        className={`absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 background-cover background-center background-no-repeat w-3/4`}
+        style={{
+          clipPath: `polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)`,
+          aspectRatio: `1/1.155`,
+        }}
       >
         <img
           src={image}
@@ -119,11 +144,14 @@ export default function Avatar({
 
       {/* User Level */}
       <div
-        className={`absolute bottom-0 right-0 grid place-content-center ${
+        className={`absolute ${levelPosition[size]} grid place-content-center ${
           getLevelColor(level).bg
-        } ${
-          getLevelColor(level).text
-        } w-5 aspect-square rounded-full font-semibold text-[0.6rem] text-dark shadow-lg shadow-black/50`}
+        } ${getLevelColor(level).text} ${
+          levelWidth[size]
+        } aspect-square rounded-full font-semibold text-dark shadow-lg shadow-dark/70`}
+        style={{
+          fontSize: levelFontSize[size],
+        }}
       >
         {level || 0}
       </div>

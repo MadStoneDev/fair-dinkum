@@ -58,7 +58,7 @@ export default function UserListCard({
           username={username}
           progress={progress}
           level={level || 0}
-          size={50}
+          size={"small"}
           image={avatar}
         />
       </div>

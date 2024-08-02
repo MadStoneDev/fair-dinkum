@@ -20,7 +20,7 @@ export default function AskQuestion({ user }: { user: string }) {
     >
       {/* Header */}
       <div
-        className={`px-2 md:px-4 py-4 flex flex-row gap-4 h-full border-b border-dark/10 dark:border-light/10 bg-dark dark:bg-light/15 text-light`}
+        className={`px-2 md:px-4 py-4 flex flex-row gap-4 h-full border-b border-dark/10 dark:border-light/10 bg-dark dark:bg-gray text-light`}
       >
         <div className={`flex-grow flex flex-col justify-center h-full`}>
           <h4

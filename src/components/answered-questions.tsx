@@ -1,7 +1,7 @@
 ﻿export default function AnsweredQuestions({ user }: { user: string }) {
   return (
     <article
-      className={`relative flex flex-col bg-light/80 dark:bg-light/15 md:rounded-2xl overflow-hidden`}
+      className={`relative flex flex-col bg-light/80 dark:bg-gray md:rounded-2xl overflow-hidden`}
     >
       {/* Header */}
       <div className={`p-2 md:p-4 flex flex-row items-center gap-4 h-full`}>
