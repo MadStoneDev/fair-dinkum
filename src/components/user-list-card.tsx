@@ -27,9 +27,9 @@ export default function UserListCard({
   // Functions
   const normaliseTotal = (total: number) => {
     if (total > 999999) {
-      return `${Math.round(total / 1000000)} M`;
+      return `${Math.floor(total / 1000000)} M`;
     } else if (total > 9999) {
-      return `${Math.ceil(total / 1000)} K`;
+      return `${Math.floor(total / 1000)} K`;
     } else {
       return total.toLocaleString();
     }
@@ -48,13 +48,14 @@ export default function UserListCard({
         }}
       >
         <div
-          className={`absolute top-0 left-0 w-full h-full bg-accent/75`}
+          className={`absolute top-0 left-0 w-full h-full bg-gray/75 dark:bg-light/70`}
         ></div>
       </div>
 
       {/* Avatar */}
       <div className={`-ml-[25px] grid justify-center z-10`}>
         <Avatar
+          username={username}
           progress={progress}
           level={level || 0}
           size={50}
@@ -69,7 +70,7 @@ export default function UserListCard({
         <section className={`text-center`}>
           <Link
             href={`/user/${username}`}
-            className={`-mb-1 p-1 font-semibold text-sm lg:text-lg hover:bg-accent transition-all duration-500 ease-in-out`}
+            className={`-mb-1 p-1 font-semibold text-sm lg:text-lg hover:bg-accent hover:text-light transition-all duration-500 ease-in-out`}
           >
             {username}
           </Link>
@@ -77,21 +78,25 @@ export default function UserListCard({
 
         {/* Stats */}
         <section className={`grid grid-cols-2`}>
-          <div
+          <Link
+            href={`/user/${username}/trackers`}
             className={`px-4 flex flex-col gap-2 items-center border-r-[0.5px] border-dark/10 dark:border-light/20 w-20`}
           >
-            <Footprints size={20} />
+            <Footprints size={18} />
             <h3 className={`font-semibold text-xs`}>
               {normaliseTotal(trackers)}
             </h3>
-          </div>
+          </Link>
 
-          <div className={`px-4 flex flex-col gap-2 items-center w-20`}>
-            <Search size={20} />
+          <Link
+            href={`/user/${username}/tracking`}
+            className={`px-4 flex flex-col gap-2 items-center w-20`}
+          >
+            <Search size={18} />
             <h3 className={`font-semibold text-xs`}>
               {normaliseTotal(tracking)}
             </h3>
-          </div>
+          </Link>
         </section>
       </div>
 
@@ -101,13 +106,13 @@ export default function UserListCard({
       >
         <Link
           href={`/user/${username}/follow`}
-          className={`px-2 lg:px-4 py-2 grid place-content-center hover:bg-light/20 text-center transition-all duration-500 ease-in-out`}
+          className={`px-2 lg:px-4 py-2 grid place-content-center hover:bg-light/20 text-light text-center transition-all duration-500 ease-in-out`}
         >
           <IconMoodPlus stroke={1.75} width={22} />
         </Link>
         <Link
           href={`/user/${username}/ask`}
-          className={`px-2 lg:px-4 py-2 grid place-content-center hover:bg-light/20 text-center transition-all duration-500 ease-in-out`}
+          className={`px-2 lg:px-4 py-2 grid place-content-center hover:bg-light/20 text-light text-center transition-all duration-500 ease-in-out`}
         >
           <IconMessage2Question stroke={1.75} width={22} />
         </Link>

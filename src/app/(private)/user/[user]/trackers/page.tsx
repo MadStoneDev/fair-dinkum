@@ -1,11 +1,7 @@
 ﻿import UserListCard from "@/components/user-list-card";
 import { dummyTrackers } from "@/data/dummy-trackers";
 
-export default function UserFollowers({
-  params,
-}: {
-  params: { user: string };
-}) {
+export default function TrackerPage({ params }: { params: { user: string } }) {
   return (
     <main className="px-3 lg:px-8 mb-16 transition-all duration-500 ease-in-out">
       <h1 className={`text-base md:text-xl lg:text-2xl font-bold`}>

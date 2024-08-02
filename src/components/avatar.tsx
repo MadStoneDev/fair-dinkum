@@ -3,8 +3,16 @@
 import React from "react";
 import styled from "styled-components";
 
-const AvatarWrapper = styled.div`
-  position: relative;
+const AvatarWrapper = styled.div``;
+
+const AvatarImage = styled.div`
+  width: 70%;
+  height: 70%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  z-index: 0;
 `;
 
 interface LevelColorsProps {
@@ -16,11 +24,13 @@ interface LevelColorsProps {
 }
 
 export default function Avatar({
+  username = "",
   progress,
   level,
   size = 100,
   image = "",
 }: {
+  username: string;
   progress: number;
   level: number;
   size?: number;
@@ -52,8 +62,8 @@ export default function Avatar({
   };
 
   return (
-    <AvatarWrapper style={{ width: `${size}px` }}>
-      <svg viewBox="0 0 100 111">
+    <AvatarWrapper className={`relative`} style={{ width: `${size}px` }}>
+      <svg viewBox="0 0 100 111" className={`object-cover`}>
         {/* Margin */}
         <path
           d="M10857.8 396.705c3.4-1.96 7.6-1.96 11 0 6.9 3.986 18.7 10.794 25.6 14.78 3.4 1.96 5.5 5.583 5.5 9.503v29.561c0 3.92-2.1 7.543-5.5 9.503-6.9 3.987-18.7 10.794-25.6 14.78a11.02 11.02 0 0 1-11 0c-6.9-3.986-18.7-10.793-25.6-14.78-3.4-1.96-5.5-5.583-5.5-9.503v-29.561c0-3.92 2.1-7.543 5.5-9.503 6.9-3.986 18.7-10.794 25.6-14.78Z"
@@ -95,25 +105,17 @@ export default function Avatar({
           className={`fill-light dark:fill-gray z-20`}
           transform="translate(-14800.45 -540.296) scale(1.36703)"
         />
-
-        {/* Image */}
-        <defs>
-          <clipPath id="clipImage">
-            <path
-              d="M10860.4 409.586c1.8-1.045 4-1.045 5.8 0l18.3 10.557a5.852 5.852 0 0 1 2.9 5.068v21.115a5.85 5.85 0 0 1-2.9 5.068l-18.3 10.557a5.757 5.757 0 0 1-5.8 0l-18.3-10.557a5.85 5.85 0 0 1-2.9-5.068v-21.115c0-2.09 1.1-4.022 2.9-5.068l18.3-10.557Z"
-              transform="translate(-14800.45 -540.296) scale(1.36703)"
-            />
-          </clipPath>
-        </defs>
-
-        <image
-          xlinkHref={image}
-          className={`object-cover z-20`}
-          clipPath="url(#clipImage)"
-          width={`100%`}
-          height={`100%`}
-        />
       </svg>
+
+      <AvatarImage
+        className={`absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2`}
+      >
+        <img
+          src={image}
+          alt={username}
+          className={`w-full h-full object-cover object-center`}
+        />
+      </AvatarImage>
 
       {/* User Level */}
       <div

@@ -6,7 +6,7 @@
     avatar: "/dummy/avatar.jpg",
     cover: "/dummy/cover_2.jpg",
     progress: 50,
-    level: 24,
+    level: 2,
     trackers: 96824585,
     tracking: 75223,
   },
@@ -96,7 +96,7 @@
     progress: 25,
     level: 77,
     trackers: 1,
-    tracking: 0,
+    tracking: 9869,
   },
   {
     id: 10,
@@ -128,8 +128,8 @@
     cover: "/dummy/cover_2.jpg",
     progress: 25,
     level: 110,
-    trackers: 10,
-    tracking: 35,
+    trackers: 1946,
+    tracking: 827,
   },
   {
     id: 13,
@@ -150,7 +150,7 @@
     cover: "/dummy/cover_2.jpg",
     progress: 25,
     level: 152,
-    trackers: 10,
-    tracking: 35,
+    trackers: 12358,
+    tracking: 724,
   },
 ];
