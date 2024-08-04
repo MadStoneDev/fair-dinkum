@@ -4,11 +4,7 @@ import { FormEvent, useState } from "react";
 import styled from "styled-components";
 import { IconMessageForward } from "@tabler/icons-react";
 
-const QuestionBlock = styled.span`
-  &:empty::before {
-    content: attr(data-placeholder);
-  }
-`;
+const QuestionBlock = styled.span``;
 
 export default function AskQuestion({ user }: { user: string }) {
   // States
@@ -35,15 +31,22 @@ export default function AskQuestion({ user }: { user: string }) {
       </div>
 
       {/* Body */}
-      <div className={`flex`}>
+      <div className={`relative flex`}>
         <QuestionBlock
           contentEditable
           data-placeholder={`Example: What's your favourite movie?`}
-          className={`px-2 md:px-4 pt-4 pb-10 min-w-full min-h-20 bg-light focus:ring-0 focus:border-0 focus:outline-none lg:rounded-b-xl resize-none text-sm empty:font-light empty:italic text-dark empty:text-dark/60 overflow-hidden`}
+          className={`px-2 md:px-4 pt-4 pb-10 border min-w-full min-h-24 bg-light focus:ring-0 focus:border-0 focus:outline-none lg:rounded-b-xl resize-none text-sm empty:font-light empty:italic empty:text-dark/60 ${
+            question.length > 0 ? "text-dark" : "text-dark/60"
+          } overflow-hidden`}
           onInput={(e: FormEvent) => {
             setQuestion(e.currentTarget.innerHTML);
           }}
         />
+        <span
+          className={`pointer-events-none cursor-text absolute top-0 left-0 px-2 md:px-4 pt-4 text-dark/60 italic text-sm`}
+        >
+          Example: What's your favourite movie?
+        </span>
         <button
           className={`pl-1.5 pt-1.5 pb-1 pr-1 absolute bottom-0 right-0 bg-dark dark:bg-dark/85 hover:bg-accent hover:dark:bg-accent rounded-tl-xl text-light transition-all duration-500 ease-in-out`}
           onClick={() => console.log(question)}

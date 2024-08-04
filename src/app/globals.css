@@ -63,3 +63,30 @@ body {
 .feature-scroll::-webkit-scrollbar {
   display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
 }
+
+@supports selector(::-webkit-scrollbar) {
+  ::-webkit-scrollbar {
+    max-width: 7px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease-in-out;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.35);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 1);
+    transition: all 0.3s ease-in-out;
+  }
+}

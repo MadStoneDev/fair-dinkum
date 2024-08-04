@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`relative flex flex-col gap-6 min-h-screen bg-neutral-100 dark:bg-dark`}
+        className={`relative flex flex-col gap-6 h-screen max-h-screen bg-neutral-100 dark:bg-dark overflow-hidden`}
       >
         <ThemeProvider>
           {/* Nav Bar */}
