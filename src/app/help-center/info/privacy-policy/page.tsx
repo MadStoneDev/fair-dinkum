@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function PrivacyPolicy() {
   return (
-    <main className="ml-0 md:ml-16 max-w-xl text-sm font-light leading-6 transition-all duration-500 ease-in-out">
+    <section className="ml-0 md:ml-16 max-w-xl text-sm font-light leading-6 transition-all duration-500 ease-in-out">
       <h1 className={`text-2xl font-bold`}>Privacy Policy</h1>
       <h4 className={`mb-8 text-sm text-gray/50 dark:text-light/30`}>
         Effective Date: <span className={`font-bold`}>24.07.2024</span>
@@ -70,6 +70,6 @@ export default function PrivacyPolicy() {
         </Link>
         .
       </p>
-    </main>
+    </section>
   );
 }

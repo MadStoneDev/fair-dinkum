@@ -15,11 +15,13 @@ export default function NavBar() {
   // States
   const [isOpen, setIsOpen] = useState(false);
 
-  const publicRoutes: string[] = ["/hows-it-work", "/premium", "/help-center"];
-
   // Functions
   const isPublicRoute = () => {
-    console.log(pathname);
+    const publicRoutes: string[] = [
+      "/hows-it-work",
+      "/premium",
+      "/help-center",
+    ];
     return (
       pathname === "/" ||
       publicRoutes.some((route) => pathname.startsWith(route))

@@ -1,7 +1,7 @@
-﻿export default function AnsweredQuestions({ user }: { user: string }) {
+﻿export default function AnsweredQuestion({ user }: { user: string }) {
   return (
     <article
-      className={`relative flex flex-col bg-light/80 dark:bg-gray md:rounded-2xl overflow-hidden`}
+      className={`relative flex flex-col md:rounded-2xl bg-light/80 dark:bg-gray overflow-hidden`}
     >
       {/* Header */}
       <div className={`p-2 md:p-4 flex flex-row items-center gap-4 h-full`}>
@@ -28,7 +28,7 @@
       </div>
 
       {/* Answer */}
-      <div className={`px-4 py-2 md:pb-4 bg-accent`}>
+      <div className={`px-4 py-2 md:pb-4 bg-light/80 dark:bg-gray`}>
         <div className={`mb-4 flex flex-col justify-center`}>
           <h4
             className={`mt-1 -mb-0.5 lg:-mb-1 text-xs font-light text-light/50`}
@@ -38,7 +38,7 @@
           <h3
             className={`text-sm md:text-base lg:text-lg font-medium tracking-tighter text-light`}
           >
-            {user} answered:
+            you answered:
           </h3>
         </div>
         <p className={`text-xs md:text-sm text-light`}>Yayyyy!</p>

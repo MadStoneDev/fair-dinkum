@@ -12,11 +12,11 @@ export default function AskQuestion({ user }: { user: string }) {
 
   return (
     <article
-      className={`mb-4 relative flex flex-col dark:border-light md:rounded-2xl overflow-hidden`}
+      className={`mb-4 relative flex flex-col md:rounded-2xl overflow-hidden`}
     >
       {/* Header */}
       <div
-        className={`px-2 md:px-4 py-4 flex flex-row gap-4 h-full border-b border-dark/10 dark:border-light/10 bg-dark dark:bg-gray text-light`}
+        className={`px-2 md:px-4 py-4 flex flex-row gap-4 h-full bg-dark dark:bg-gray text-light`}
       >
         <div className={`flex-grow flex flex-col justify-center h-full`}>
           <h4
@@ -35,7 +35,7 @@ export default function AskQuestion({ user }: { user: string }) {
         <QuestionBlock
           contentEditable
           data-placeholder={`Example: What's your favourite movie?`}
-          className={`px-2 md:px-4 pt-4 pb-10 border min-w-full min-h-24 bg-light focus:ring-0 focus:border-0 focus:outline-none lg:rounded-b-xl resize-none text-sm empty:font-light empty:italic empty:text-dark/60 ${
+          className={`px-2 md:px-4 pt-4 pb-10 min-w-full min-h-24 bg-light focus:ring-0 focus:border-0 focus:outline-none lg:rounded-b-xl resize-none text-sm empty:font-light empty:italic empty:text-dark/60 ${
             question.length > 0 ? "text-dark" : "text-dark/60"
           } overflow-hidden`}
           onInput={(e: FormEvent) => {
