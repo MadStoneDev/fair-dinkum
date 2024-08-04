@@ -2,20 +2,40 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
+
 import NavBarItem from "@/components/nav-bar-item";
 import DarkModeToggle from "@/components/dark-mode-toggle";
 import { IconHelpHexagon, IconPropeller } from "@tabler/icons-react";
 
 export default function NavBar() {
+  // Hooks
+  const pathname = usePathname();
+
   // States
   const [isOpen, setIsOpen] = useState(false);
+
+  const publicRoutes: string[] = ["/hows-it-work", "/premium", "/help-center"];
+
+  // Functions
+  const isPublicRoute = () => {
+    console.log(pathname);
+    return (
+      pathname === "/" ||
+      publicRoutes.some((route) => pathname.startsWith(route))
+    );
+  };
 
   const closeMenu = () => {
     setIsOpen(false);
   };
 
   return (
-    <nav className={`p-8 flex flex-row items-center justify-between w-full`}>
+    <nav
+      className={`p-8 flex flex-row items-center justify-between w-full ${
+        isPublicRoute() ? "" : "mx-auto max-w-4xl"
+      }`}
+    >
       {/* Logo */}
       <Link
         href={`/`}

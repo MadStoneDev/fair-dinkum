@@ -29,7 +29,7 @@ export default function RootLayout({
           {children}
 
           {/* Footer */}
-          <footer className="absolute bottom-0 py-3 flex items-center justify-center w-full text-center text-[0.7rem] text-dark/30 dark:text-light/30">
+          <footer className="absolute bottom-0 py-3 flex items-center justify-center w-full text-center text-[0.7rem] font-light text-dark/50 dark:text-light/30">
             Copyright &copy; 2024{" "}
             <Link
               href="https://madstone.dev"
