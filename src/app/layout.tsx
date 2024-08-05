@@ -20,11 +20,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`relative flex flex-col h-screen max-h-screen bg-neutral-100 dark:bg-dark overflow-hidden`}
+        className={`relative flex flex-col min-h-screen bg-neutral-100 dark:bg-dark`}
       >
         <ThemeProvider>
           {/* Nav Bar */}
           <NavBar />
+
+          {/* Spacer */}
+          <div className={`h-16 md:h-28`}></div>
 
           {children}
 

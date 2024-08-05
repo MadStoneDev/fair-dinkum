@@ -7,7 +7,7 @@ export default function User({ params }: { params: { user: string } }) {
   const { user } = params;
 
   return (
-    <div className="mx-auto mb-16 grid grid-cols-1 gap-6 w-full max-w-4xl overflow-hidden transition-all duration-500 ease-in-out">
+    <div className="mx-auto mb-16 grid grid-cols-1 gap-6 w-full lg:max-w-3xl overflow-hidden transition-all duration-500 ease-in-out">
       {/* User Card */}
       <UserProfileCard />
 

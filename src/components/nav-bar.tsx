@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 import NavBarItem from "@/components/nav-bar-item";
@@ -14,6 +14,7 @@ export default function NavBar() {
 
   // States
   const [isOpen, setIsOpen] = useState(false);
+  const [shrink, setShrink] = useState(false);
 
   // Functions
   const isPublicRoute = () => {
@@ -32,11 +33,29 @@ export default function NavBar() {
     setIsOpen(false);
   };
 
+  const handleScroll = () => {
+    if (window.scrollY > 150) {
+      setShrink(true);
+    } else {
+      setShrink(false);
+    }
+  };
+
+  // Effects
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <nav
-      className={`p-8 flex flex-row items-center justify-between w-full ${
-        isPublicRoute() ? "" : "mx-auto max-w-4xl"
-      }`}
+      className={`py-4 fixed top-0 left-0 right-0 px-8 lg:px-2 ${
+        shrink ? "md:py-4" : "md:py-8"
+      } flex flex-row items-center justify-between w-full bg-neutral-100 dark:bg-dark ${
+        isPublicRoute() ? "" : "mx-auto lg:max-w-3xl"
+      } transition-all duration-500 ease-in-out z-50`}
     >
       {/* Logo */}
       <Link
@@ -58,7 +77,7 @@ export default function NavBar() {
       </button>
 
       <div
-        className={`pl-8 pr-8 md:pr-0 flex-grow absolute md:relative top-0 h-full ${
+        className={`px-8 md:pr-0 flex-grow absolute md:relative top-0 h-full ${
           isOpen ? "max-h-full py-8 md:py-0" : "max-h-0 py-0"
         } md:max-h-full left-0 right-0 flex flex-col md:flex-row md:justify-between gap-8 md:gap-0 bg-accent md:bg-transparent overflow-hidden z-40 transition-all duration-500 ease-in-out`}
       >

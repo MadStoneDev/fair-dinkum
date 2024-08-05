@@ -1,17 +1,12 @@
 ﻿import Avatar from "@/components/avatar";
-import { Footprints } from "lucide-react";
-import {
-  IconHelpHexagon,
-  IconHexagon2,
-  IconHexagonFilled,
-  IconHexagonLetterU,
-  IconMessageForward,
-} from "@tabler/icons-react";
+
+import { IconMessageForward } from "@tabler/icons-react";
+import TrackUserButton from "@/components/track-user-button";
 
 export default function UserProfileCard() {
   return (
     <section
-      className={`flex flex-col items-center bg-light dark:bg-gray w-full h-min md:rounded-2xl text-center overflow-hidden`}
+      className={`flex flex-col items-center bg-light dark:bg-gray w-full h-min lg:rounded-2xl text-center overflow-hidden`}
     >
       {/* Header */}
       <article
@@ -45,6 +40,7 @@ export default function UserProfileCard() {
 
       {/* Stats */}
       <section className={`mt-6 mb-4 grid grid-cols-3`}>
+        {/* Answers */}
         <div
           className={`px-6 flex flex-col items-center border-r-[0.5px] border-dark/10 dark:border-light/20`}
         >
@@ -52,6 +48,7 @@ export default function UserProfileCard() {
           <h4 className={`text-xs`}>Answers</h4>
         </div>
 
+        {/* Trackers */}
         <div
           className={`px-6 flex flex-col items-center border-r-[0.5px] border-dark/10 dark:border-light/20`}
         >
@@ -59,30 +56,20 @@ export default function UserProfileCard() {
           <h4 className={`text-xs`}>Trackers</h4>
         </div>
 
+        {/* Tracking */}
         <div className={`px-6 flex flex-col items-center`}>
           <h3 className={`font-semibold text-xs md:text-sm`}>870</h3>
           <h4 className={`text-xs`}>Tracking</h4>
         </div>
       </section>
 
-      {/* Badges */}
-      <section className={`mt-6 mb-2 flex items-center`}>
-        <IconHelpHexagon />
-        <IconHexagonFilled />
-        <IconHexagon2 />
-        <IconHexagonLetterU />
-      </section>
+      {/* Badges - Sprint#3 or Sprint#4 */}
 
-      {/* Links */}
+      {/* Links - Sprint#2 or Sprint#3 */}
 
       {/* Actions */}
       <article className={`p-8 grid grid-cols-2 gap-4 w-full max-w-xs text-sm`}>
-        <button
-          className={`p-2 flex items-center justify-center gap-1 aspect-square bg-dark dark:bg-light rounded-xl font-medium text-light dark:text-dark shadow-md shadow-dark/60 hover:shadow-xl hover:shadow-dark/30 hover:scale-[103%] transition-all duration-500 ease-in-out`}
-        >
-          Track
-          <Footprints size={18} />
-        </button>
+        <TrackUserButton />
         <button
           className={`p-2 flex items-center justify-center gap-1 aspect-square bg-accent rounded-xl text-light font-medium shadow-md shadow-dark/60 hover:shadow-xl hover:shadow-dark/30 hover:scale-[103%] transition-all duration-500 ease-in-out`}
         >
