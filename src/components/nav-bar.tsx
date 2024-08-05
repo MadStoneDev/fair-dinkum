@@ -51,10 +51,10 @@ export default function NavBar() {
 
   return (
     <nav
-      className={`py-4 fixed top-0 left-0 right-0 px-8 lg:px-2 ${
+      className={`py-4 fixed top-0 left-0 right-0 px-8 ${
         shrink ? "md:py-4" : "md:py-8"
       } flex flex-row items-center justify-between w-full bg-neutral-100 dark:bg-dark ${
-        isPublicRoute() ? "" : "mx-auto lg:max-w-3xl"
+        isPublicRoute() ? "" : "mx-auto lg:px-0 lg:max-w-3xl"
       } transition-all duration-500 ease-in-out z-50`}
     >
       {/* Logo */}
