@@ -122,8 +122,7 @@ export default function NavBar() {
           ></div>
           {/* Auth */}
           <Link
-            // href={`/login`}
-            href={`/`}
+            href={`/login`}
             className={`md:px-4 md:py-2 md:bg-accent rounded-full font-light text-dark md:text-light text-xl md:text-xs w-max whitespace-nowrap`}
             onClick={closeMenu}
           >

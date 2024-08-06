@@ -6,6 +6,7 @@
       <p className={`mb-8 opacity-50`}>
         Choose an article in the sidebar to get started.
       </p>
+      {/* Sprint#2: more content */}
     </section>
   );
 }

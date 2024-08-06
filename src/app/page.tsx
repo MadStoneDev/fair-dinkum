@@ -5,6 +5,8 @@ export default function Home() {
     <main className="flex-col items-center justify-start gap-6 transition-all duration-500 ease-in-out">
       {/* Main Content */}
       <HomeFeature />
+
+      {/* Sprint#2: more content */}
     </main>
   );
 }
