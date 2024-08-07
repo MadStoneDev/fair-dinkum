@@ -36,23 +36,32 @@ export default function FAQ() {
       <h3 className={`p-2 w-full bg-gray`}>
         What is <span className={`font-bold`}>fair</span>Dinkum?
       </h3>
-      <p className={`mb-8 p-2 pl-4 opacity-50`}>
-        Choose an article in the sidebar to get started.
+      <p className={`mb-8 p-2 pl-4 text-dark/60 dark:text-light/50`}>
+        <span className={`font-bold`}>fair</span>Dinkum is a safe and private
+        platform where curious minds can ask questions, anonymously or not, of
+        friends and communities. It is also a place where you can spill the
+        beans also anonymously or not.
       </p>
 
       <h3 className={`p-2 w-full bg-gray`}>
         How do I create an account on <span className={`font-bold`}>fair</span>
         Dinkum?
       </h3>
-      <p className={`mb-8 p-2 pl-4 opacity-50`}>
-        Choose an article in the sidebar to get started.
+      <p className={`mb-8 p-2 pl-4 text-dark/60 dark:text-light/50`}>
+        Making a new account is easy. Just click on the{" "}
+        <span
+          className={`px-1 border-b border-accent text-dark dark:text-light`}
+        >
+          Get Started
+        </span>{" "}
+        button in the top right corner of the page.
       </p>
 
       <h3 className={`p-2 w-full bg-gray`}>
         Is <span className={`font-bold`}>fair</span>
         Dinkum free to use?
       </h3>
-      <p className={`mb-8 p-2 pl-4 opacity-50`}>
+      <p className={`mb-8 p-2 pl-4 text-dark/60 dark:text-light/50`}>
         Choose an article in the sidebar to get started.
       </p>
       <FAQLink
@@ -70,19 +79,19 @@ export default function FAQ() {
       <h3 className={`p-2 w-full bg-gray`}>
         How do I update my profile information?
       </h3>
-      <p className={`mb-8 p-2 pl-4 opacity-50`}>
+      <p className={`mb-8 p-2 pl-4 text-dark/60 dark:text-light/50`}>
         Choose an article in the sidebar to get started.
       </p>
 
       <h3 className={`p-2 w-full bg-gray`}>How do I update my password?</h3>
-      <p className={`mb-8 p-2 pl-4 opacity-50`}>
+      <p className={`mb-8 p-2 pl-4 text-dark/60 dark:text-light/50`}>
         Choose an article in the sidebar to get started.
       </p>
 
       <h3 className={`p-2 w-full bg-gray`}>
         What should I do if I forget my password?
       </h3>
-      <p className={`mb-8 p-2 pl-4 opacity-50`}>
+      <p className={`mb-8 p-2 pl-4 text-dark/60 dark:text-light/50`}>
         Choose an article in the sidebar to get started.
       </p>
       <FAQLink
@@ -100,7 +109,7 @@ export default function FAQ() {
       <h3 className={`p-2 w-full bg-gray`}>
         How do I <span className={`font-semibold`}>ask</span> a question?
       </h3>
-      <p className={`mb-8 p-2 pl-4 opacity-50`}>
+      <p className={`mb-8 p-2 pl-4 text-dark/60 dark:text-light/50`}>
         Choose an article in the sidebar to get started.
       </p>
 
@@ -108,7 +117,7 @@ export default function FAQ() {
         How do I <span className={`font-semibold`}>spill</span> an answer to a
         question?
       </h3>
-      <p className={`mb-8 p-2 pl-4 opacity-50`}>
+      <p className={`mb-8 p-2 pl-4 text-dark/60 dark:text-light/50`}>
         Choose an article in the sidebar to get started.
       </p>
 
@@ -116,7 +125,7 @@ export default function FAQ() {
         Can I edit my <span className={`font-semibold`}>asks</span> or{" "}
         <span className={`font-semibold`}>spills</span>?
       </h3>
-      <p className={`mb-8 p-2 pl-4 opacity-50`}>
+      <p className={`mb-8 p-2 pl-4 text-dark/60 dark:text-light/50`}>
         Choose an article in the sidebar to get started.
       </p>
       <FAQLink
@@ -132,22 +141,22 @@ export default function FAQ() {
         Communities
       </h2>
       <h3 className={`p-2 w-full bg-gray`}>What are communities?</h3>
-      <p className={`mb-8 p-2 pl-4 opacity-50`}>
+      <p className={`mb-8 p-2 pl-4 text-dark/60 dark:text-light/50`}>
         Choose an article in the sidebar to get started.
       </p>
 
       <h3 className={`p-2 w-full bg-gray`}>How do I join a community?</h3>
-      <p className={`mb-8 p-2 pl-4 opacity-50`}>
+      <p className={`mb-8 p-2 pl-4 text-dark/60 dark:text-light/50`}>
         Choose an article in the sidebar to get started.
       </p>
 
       <h3 className={`p-2 w-full bg-gray`}>How do I create a new community?</h3>
-      <p className={`mb-8 p-2 pl-4 opacity-50`}>
+      <p className={`mb-8 p-2 pl-4 text-dark/60 dark:text-light/50`}>
         Choose an article in the sidebar to get started.
       </p>
 
       <h3 className={`p-2 w-full bg-gray`}>How do I leave a community?</h3>
-      <p className={`mb-8 p-2 pl-4 opacity-50`}>
+      <p className={`mb-8 p-2 pl-4 text-dark/60 dark:text-light/50`}>
         Choose an article in the sidebar to get started.
       </p>
       <FAQLink
@@ -166,12 +175,12 @@ export default function FAQ() {
         How does <span className={`font-bold`}>fair</span>Dinkum protect my
         privacy?
       </h3>
-      <p className={`mb-8 p-2 pl-4 opacity-50`}>
+      <p className={`mb-8 p-2 pl-4 text-dark/60 dark:text-light/50`}>
         Choose an article in the sidebar to get started.
       </p>
 
       <h3 className={`p-2 w-full bg-gray`}>How do I join a community?</h3>
-      <p className={`mb-8 p-2 pl-4 opacity-50`}>
+      <p className={`mb-8 p-2 pl-4 text-dark/60 dark:text-light/50`}>
         Can I make my <span className={`font-semibold`}>asks</span> and/or{" "}
         <span className={`font-semibold`}>spills</span> private?
       </p>
@@ -179,7 +188,7 @@ export default function FAQ() {
       <h3 className={`p-2 w-full bg-gray`}>
         How do I report inappropriate content or behaviour?
       </h3>
-      <p className={`mb-8 p-2 pl-4 opacity-50`}>
+      <p className={`mb-8 p-2 pl-4 text-dark/60 dark:text-light/50`}>
         Choose an article in the sidebar to get started.
       </p>
       <FAQLink
@@ -197,14 +206,14 @@ export default function FAQ() {
       <h3 className={`p-2 w-full bg-gray`}>
         What are badges, levels and achievements?
       </h3>
-      <p className={`mb-8 p-2 pl-4 opacity-50`}>
+      <p className={`mb-8 p-2 pl-4 text-dark/60 dark:text-light/50`}>
         Choose an article in the sidebar to get started.
       </p>
 
       <h3 className={`p-2 w-full bg-gray`}>
         How do I earn badges and achievements?
       </h3>
-      <p className={`mb-8 p-2 pl-4 opacity-50`}>
+      <p className={`mb-8 p-2 pl-4 text-dark/60 dark:text-light/50`}>
         Choose an article in the sidebar to get started.
       </p>
       <FAQLink
@@ -223,14 +232,14 @@ export default function FAQ() {
         What premium features does <span className={`font-bold`}>fair</span>
         Dinkum offer?
       </h3>
-      <p className={`mb-8 p-2 pl-4 opacity-50`}>
+      <p className={`mb-8 p-2 pl-4 text-dark/60 dark:text-light/50`}>
         Choose an article in the sidebar to get started.
       </p>
 
       <h3 className={`p-2 w-full bg-gray`}>
         How do I subscribe to premium features?
       </h3>
-      <p className={`mb-8 p-2 pl-4 opacity-50`}>
+      <p className={`mb-8 p-2 pl-4 text-dark/60 dark:text-light/50`}>
         Choose an article in the sidebar to get started.
       </p>
       <FAQLink
@@ -249,7 +258,7 @@ export default function FAQ() {
         How do I contact <span className={`font-bold`}>fair</span>Dinkum
         support?
       </h3>
-      <p className={`mb-8 p-2 pl-4 opacity-50`}>
+      <p className={`mb-8 p-2 pl-4 text-dark/60 dark:text-light/50`}>
         Choose an article in the sidebar to get started.
       </p>
 
@@ -257,7 +266,7 @@ export default function FAQ() {
         Where can I find more information about{" "}
         <span className={`font-bold`}>fair</span>Dinkum?
       </h3>
-      <p className={`mb-8 p-2 pl-4 opacity-50`}>
+      <p className={`mb-8 p-2 pl-4 text-dark/60 dark:text-light/50`}>
         Choose an article in the sidebar to get started.
       </p>
       <FAQLink
@@ -273,21 +282,21 @@ export default function FAQ() {
         Troubleshooting
       </h2>
       <h3 className={`p-2 w-full bg-gray`}>Why can't I login to my account?</h3>
-      <p className={`mb-8 p-2 pl-4 opacity-50`}>
+      <p className={`mb-8 p-2 pl-4 text-dark/60 dark:text-light/50`}>
         Choose an article in the sidebar to get started.
       </p>
 
       <h3 className={`p-2 w-full bg-gray`}>
         Why can't I see certain asks or spills?
       </h3>
-      <p className={`mb-8 p-2 pl-4 opacity-50`}>
+      <p className={`mb-8 p-2 pl-4 text-dark/60 dark:text-light/50`}>
         Choose an article in the sidebar to get started.
       </p>
 
       <h3 className={`p-2 w-full bg-gray`}>
         How do I unsubscribe from email notifications?
       </h3>
-      <p className={`mb-8 p-2 pl-4 opacity-50`}>
+      <p className={`mb-8 p-2 pl-4 text-dark/60 dark:text-light/50`}>
         Choose an article in the sidebar to get started.
       </p>
       <FAQLink

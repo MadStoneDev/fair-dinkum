@@ -9,7 +9,7 @@ export default function User({ params }: { params: { user: string } }) {
   return (
     <div className="mx-auto mb-16 grid grid-cols-1 gap-6 w-full lg:max-w-3xl overflow-hidden transition-all duration-500 ease-in-out">
       {/* User Card */}
-      <UserProfileCard />
+      <UserProfileCard username={user} />
 
       <section className={`grid grid-cols-1 gap-4 items-center w-full`}>
         {/* Profile Navigation */}

@@ -2,8 +2,9 @@
 
 import { IconMessageForward } from "@tabler/icons-react";
 import TrackUserButton from "@/components/track-user-button";
+import Link from "next/link";
 
-export default function UserProfileCard() {
+export default function UserProfileCard({ username }: { username: string }) {
   return (
     <section
       className={`flex flex-col items-center bg-light dark:bg-gray w-full h-min lg:rounded-2xl text-center overflow-hidden`}
@@ -49,18 +50,22 @@ export default function UserProfileCard() {
         </div>
 
         {/* Trackers */}
-        <div
+        <Link
+          href={`/user/${username}/trackers`}
           className={`px-6 flex flex-col items-center border-r-[0.5px] border-dark/10 dark:border-light/20`}
         >
           <h3 className={`font-semibold text-xs md:text-sm`}>870</h3>
           <h4 className={`text-xs`}>Trackers</h4>
-        </div>
+        </Link>
 
         {/* Tracking */}
-        <div className={`px-6 flex flex-col items-center`}>
+        <Link
+          href={`/user/${username}/tracking`}
+          className={`px-6 flex flex-col items-center`}
+        >
           <h3 className={`font-semibold text-xs md:text-sm`}>870</h3>
           <h4 className={`text-xs`}>Tracking</h4>
-        </div>
+        </Link>
       </section>
 
       {/* Badges - Sprint#3 or Sprint#4 */}
