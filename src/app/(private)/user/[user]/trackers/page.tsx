@@ -3,12 +3,12 @@ import { dummyTrackers } from "@/data/dummy-trackers";
 
 export default function TrackerPage({ params }: { params: { user: string } }) {
   return (
-    <main className="px-3 lg:px-8 mb-16 transition-all duration-500 ease-in-out">
+    <main className="mx-auto mb-16 w-full lg:max-w-3xl transition-all duration-500 ease-in-out">
       <h1 className={`text-base md:text-xl lg:text-2xl font-bold`}>
         {params.user}'s Trackers
       </h1>
       <section
-        className={`mt-4 lg:mt-8 grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-3 transition-all duration-500 ease-in-out`}
+        className={`mt-4 lg:mt-8 grid grid-cols-1 gap-3 transition-all duration-500 ease-in-out`}
       >
         {dummyTrackers.map((tracker) => (
           <UserListCard
