@@ -1,21 +1,29 @@
-﻿import AskQuestion from "@/components/ask-question";
-import UserProfileCard from "@/components/user-profile-card";
+﻿import UserProfileCard from "@/components/user-profile-card";
 import AnsweredQuestion from "@/components/answered-question";
+import UserNavBar from "@/components/user-nav-bar";
+import { dummyUsers } from "@/data/dummy-users";
+import NotFound from "@/app/not-found";
+import AskQuestion from "@/components/ask-question";
 
 export default function User({ params }: { params: { user: string } }) {
   // Params
   const { user } = params;
+  const thisUser = dummyUsers.find((account) => account.username === user);
 
-  return (
-    <div className="mx-auto mb-16 grid grid-cols-1 gap-6 w-full lg:max-w-3xl overflow-hidden transition-all duration-500 ease-in-out">
+  return !thisUser ? (
+    <NotFound />
+  ) : (
+    <div className="mx-auto mb-16 grid grid-cols-1 gap-6 w-full lg:max-w-4xl overflow-hidden transition-all duration-500 ease-in-out">
       {/* User Card */}
-      <UserProfileCard username={user} />
+      <UserProfileCard user={thisUser} />
 
+      {/* User Navigation */}
+      {/*<UserNavBar />*/}
+
+      <AskQuestion user={thisUser} />
+
+      {/* Feed */}
       <section className={`grid grid-cols-1 gap-4 items-center w-full`}>
-        {/* Profile Navigation */}
-        {/*<div className={`grid grid-cols-1 gap-4`}></div>*/}
-
-        {/* Feed */}
         <div className={`grid grid-cols-1 gap-6`}>
           <AnsweredQuestion user={user} />
           <AnsweredQuestion user={user} />

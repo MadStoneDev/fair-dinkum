@@ -5,7 +5,9 @@
     >
       {/* Header */}
       <section className={`flex flex-col shadow-xl shadow-dark/20`}>
-        <div className={`p-2 md:p-4 flex flex-row items-center gap-4 h-full`}>
+        <div
+          className={`py-2 md:py-4 px-4 flex flex-row items-center gap-4 h-full`}
+        >
           <div
             className={`w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-accent`}
           ></div>

@@ -3,16 +3,17 @@
 import { FormEvent, useState } from "react";
 import styled from "styled-components";
 import { IconMessageForward } from "@tabler/icons-react";
+import { User } from "@/lib/types";
 
 const QuestionBlock = styled.span``;
 
-export default function AskQuestion({ user }: { user: string }) {
+export default function AskQuestion({ user }: { user: User }) {
   // States
   const [question, setQuestion] = useState("");
 
   return (
     <article
-      className={`mb-4 relative flex flex-col md:rounded-2xl overflow-hidden`}
+      className={`relative flex flex-col md:rounded-2xl overflow-hidden`}
     >
       {/* Header */}
       <div
@@ -25,7 +26,7 @@ export default function AskQuestion({ user }: { user: string }) {
             Hi logged in user,
           </h4>
           <h3 className={`md:text-lg md:font-medium tracking-tighter`}>
-            why not ask {user} a question:
+            why not ask {user.username} a question:
           </h3>
         </div>
       </div>

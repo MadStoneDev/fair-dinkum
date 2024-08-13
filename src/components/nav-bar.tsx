@@ -6,7 +6,11 @@ import { usePathname } from "next/navigation";
 
 import NavBarItem from "@/components/nav-bar-item";
 import DarkModeToggle from "@/components/dark-mode-toggle";
+
+import { currentUser } from "@/data/current-user";
+
 import { IconHelpHexagon, IconPropeller } from "@tabler/icons-react";
+import { dummyUsers } from "@/data/dummy-users";
 
 export default function NavBar() {
   // Hooks
@@ -54,7 +58,7 @@ export default function NavBar() {
       className={`py-4 fixed top-0 left-0 right-0 px-8 ${
         shrink ? "md:py-4" : "md:py-8"
       } flex flex-row items-center justify-between w-full bg-neutral-100 dark:bg-dark ${
-        isPublicRoute() ? "" : "mx-auto lg:px-0 lg:max-w-3xl"
+        isPublicRoute() ? "" : ""
       } transition-all duration-500 ease-in-out z-50`}
     >
       {/* Logo */}
@@ -77,8 +81,8 @@ export default function NavBar() {
       </button>
 
       <div
-        className={`px-8 md:pr-0 flex-grow absolute md:relative top-0 h-full ${
-          isOpen ? "max-h-full py-8 md:py-0" : "max-h-0 py-0"
+        className={`px-8 md:pr-0 flex-grow absolute md:relative top-0 h-screen ${
+          isOpen ? "max-h-screen py-8 md:py-0" : "max-h-0 py-0"
         } md:max-h-full left-0 right-0 flex flex-col md:flex-row md:justify-between gap-8 md:gap-0 bg-accent md:bg-transparent overflow-hidden z-40 transition-all duration-500 ease-in-out`}
       >
         {/* Navigation */}
@@ -127,6 +131,16 @@ export default function NavBar() {
             onClick={closeMenu}
           >
             Get Started
+          </Link>
+          <Link
+            href={`/user/${
+              dummyUsers.find((account) => account.user_id === currentUser)!
+                .username
+            }`}
+            className={`md:px-4 md:py-2 md:bg-accent rounded-full font-light text-dark md:text-light text-xl md:text-xs w-max whitespace-nowrap`}
+            onClick={closeMenu}
+          >
+            My Profile
           </Link>
         </section>
       </div>

@@ -1,7 +1,8 @@
 ﻿"use client";
 
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import Image from "next/image";
 
 const AvatarWrapper = styled.div``;
 
@@ -48,13 +49,13 @@ export default function Avatar({
   };
 
   const avatarSize = {
-    small: `50`,
+    small: `60`,
     medium: `100`,
     large: `150`,
   };
 
   const levelPosition = {
-    small: `bottom-0 right-0`,
+    small: `bottom-0 right-1.5`,
     medium: `bottom-0 right-0`,
     large: `bottom-3 right-4`,
   };
@@ -66,10 +67,13 @@ export default function Avatar({
   };
 
   const levelFontSize = {
-    small: `0.6rem`,
+    small: `0.625rem`,
     medium: `0.8rem`,
     large: `1rem`,
   };
+
+  // States
+  const [imgError, setImgError] = useState(false);
 
   const getLevelColor = (level: number) => {
     return Object.keys(levelColors).reduce((acc, threshold) => {
@@ -129,16 +133,19 @@ export default function Avatar({
       </svg>
 
       <AvatarImage
-        className={`absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 background-cover background-center background-no-repeat w-3/4`}
+        className={`absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 background-cover background-center background-no-repeat w-[70%]`}
         style={{
           clipPath: `polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)`,
           aspectRatio: `1/1.155`,
         }}
       >
-        <img
-          src={image}
-          alt={username}
+        <Image
           className={`w-full h-full object-cover object-center`}
+          src={imgError ? "/avatar_placeholder.jpg" : image}
+          alt={username}
+          width={150}
+          height={150}
+          onError={() => setImgError(true)}
         />
       </AvatarImage>
 
