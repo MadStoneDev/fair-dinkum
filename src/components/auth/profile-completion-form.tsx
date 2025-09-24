@@ -4,7 +4,7 @@
 import { useState, useEffect } from "react";
 import { createClient } from "@/utils/supabase/client";
 import { validateUsername } from "@/lib/utils/validation";
-import { completeProfile } from "@/app/(auth)/complete-profile/actions";
+import { completeProfile } from "@/app/(auth)/auth/complete-profile/actions";
 
 export default function ProfileCompletionForm() {
   const [formData, setFormData] = useState({
