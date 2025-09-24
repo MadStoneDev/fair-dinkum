@@ -94,7 +94,7 @@ export default function UserProfileCard({ user }: { user: User }) {
         >
           <Link
             href={`/user/edit-profile}`}
-            className={`px-1 md:px-2 py-1 rounded-full hover:bg-accent hover:text-light hover:dark:text-dark transition-all duration-500 ease-in-out`}
+            className={`px-1 md:px-2 py-1 rounded-full hover:bg-accent hover:text-dark hover:dark:text-light transition-all duration-500 ease-in-out`}
           >
             <div className={`flex items-center gap-1 h-full`}>
               <span className={`hidden md:block text-xs`}>Edit Profile</span>
@@ -103,7 +103,7 @@ export default function UserProfileCard({ user }: { user: User }) {
           </Link>
           <Link
             href={`/user/settings}`}
-            className={`px-1 md:px-2 py-1 rounded-full hover:bg-accent hover:text-light hover:dark:text-dark transition-all duration-500 ease-in-out`}
+            className={`px-1 md:px-2 py-1 rounded-full hover:bg-accent hover:text-dark hover:dark:text-light transition-all duration-500 ease-in-out`}
           >
             <div className={`flex items-center gap-1 h-full`}>
               <span className={`hidden md:block text-xs`}>Settings</span>

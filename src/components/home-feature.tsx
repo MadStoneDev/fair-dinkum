@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-import { Slider } from "@/components/ui/slider";
 import HomeCard from "@/components/home-card";
 
 export default function HomeFeature({ children }: any) {
